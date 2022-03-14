@@ -1,16 +1,19 @@
 .nav {
   position: relative;
+  z-index: 99;
+  background-color: $light;
 
   .nav__detailsOpen {
+    background-color: $light;
     position: fixed;
     top: 0;
-    padding: 7px 14px;
+    padding: 7px 14px !important;
     z-index: 100;
   }
 
   .nav__details {
-    background-color: $light;
     width: 100%;
+    padding: 0 14px;
 
     .navBar__search {
       display: flex;
@@ -18,8 +21,6 @@
       align-items: center;
       width: 100%;
       padding: 10px 0;
-
-      
 
       .nav-item:first-child {
         width: 90%;
@@ -50,10 +51,10 @@
     }
 
     .navBar {
-      // display: flex;
-      // justify-content: space-between;
-      // align-items: center;
-      // width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
       padding: 10px 0;
 
       .navBar__logo {

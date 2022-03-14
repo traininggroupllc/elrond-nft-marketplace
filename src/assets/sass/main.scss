@@ -16,11 +16,13 @@ Override Bootstrap variables only above.
 // pages/
 @import './pages/home';
 @import './pages/common/tabnavigation';
+@import './pages/nftDetails';
 
 // layout/
 @import './layout/navigation';
 @import './layout/dashboard';
 @import './layout/footer';
+@import './layout/secondaryFooter';
 
 // themes/
 @import './themes/pageState';

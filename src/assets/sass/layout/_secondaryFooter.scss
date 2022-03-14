@@ -1,0 +1,158 @@
+.secondaryFooter {
+  background-color: $dark;
+
+  .secondaryFooter__top {
+    .secondaryFooter__topDetails {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      img {
+        margin-top: 80px;
+        border: 8px solid $light-gray;
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+      }
+
+      p {
+        margin: 0;
+        color: $light;
+      }
+
+      p:nth-child(2) {
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 30px;
+      }
+
+      p:nth-child(3) {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      p:last-child {
+        text-align: center;
+        margin-top: 10px;
+        padding: 0 20px;
+        font-size: 16px;
+        margin-bottom: 60px;
+      }
+    }
+    .secondaryFooter__topCard {
+      display: none;
+    }
+  }
+
+  .secondaryFooter__bottom {
+    padding: 0 14px;
+    > div:first-child {
+      margin-bottom: 20px;
+      .secondaryFooter__topLogo {
+        height: 30px;
+        width: 30px;
+        background-color: $light;
+      }
+    }
+
+    > div:last-child {
+      display: flex;
+      margin-bottom: 60px;
+
+      div > p {
+        margin: 0;
+        color: $light;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      > div:first-child {
+        width: 30%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) {
+  .secondaryFooter {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-image: url(https://f8n-production.imgix.net/collections/439n4i2u7-Screen%20Shot%202022-02-23%20at%207.23.42%20AM.png?q=50&auto=format%2Ccompress&fit=crop&max-w=1200&max-h=596&exp=-5&blur=180);
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: var(--st--colors-black100);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: sticky;
+  }
+}
+
+@media only screen and (min-width: $md) {
+  .secondaryFooter {
+    .secondaryFooter__bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      > div:first-child {
+        width: 10%;
+      }
+
+      > div:last-child {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        width: 90%;
+
+        > div:first-child {
+          width: 27%;
+        }
+
+        > div:last-child {
+          width: 70%;
+        }
+
+        div {
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) {
+  .secondaryFooter {
+    padding-top: 20px;
+
+    .secondaryFooter__top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+      padding-bottom: 30px;
+
+      .secondaryFooter__topCard {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+      }
+
+      .secondaryFooter__topDetails {
+        width: 33%;
+        align-items: flex-start;
+
+        p:last-child {
+          text-align: left;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

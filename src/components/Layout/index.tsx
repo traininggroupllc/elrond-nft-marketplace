@@ -5,12 +5,14 @@ import TabNavigation from 'pages/common/TabNavigation';
 import routes, { routeNames } from 'routes';
 import Footer from './Footer';
 import Navbar from './Navbar';
+import SecondaryFooter from './SecondaryFooter';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { search } = useLocation();
   return (
     <div className='bg-light d-flex flex-column flex-fill wrapper'>
-      {window.location.pathname === '/' ? (
+      {window.location.pathname === '/' ||
+      window.location.pathname === '/nft_details' ? (
         <Navbar />
       ) : (
         <div>
@@ -26,7 +28,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           {children}
         </AuthenticatedRoutesWrapper>
       </main>
-      <Footer />
+      {window.location.pathname === '/nft_details' ? (
+        <SecondaryFooter />
+      ) : (
+        <Footer />
+      )}
     </div>
   );
 };
