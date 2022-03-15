@@ -1,7 +1,11 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
 
-const index = () => {
+interface Props {
+  isCollection?: boolean;
+}
+
+const index = ({ isCollection }: Props) => {
   return (
     <Col
     // sm={6} lg={4} xl={3}

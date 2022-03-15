@@ -1,5 +1,7 @@
 import { dAppName } from 'config';
+import Bid from 'pages/Bid';
 import Collections from 'pages/Collections';
+import NFTDetails from 'pages/NFTDetails';
 import NFTs from 'pages/NFTs';
 import Profiles from 'pages/Profiles';
 import withPageTitle from './components/PageTitle';
@@ -16,7 +18,9 @@ export const routeNames = {
   walletconnect: '/walletconnect',
   nfts: '/nfts',
   collections: '/collections',
-  profiles: '/profiles'
+  profiles: '/profiles',
+  nftDetails: '/nft_details',
+  bid: '/bid'
 };
 
 const routes: Array<any> = [
@@ -50,6 +54,16 @@ const routes: Array<any> = [
     path: routeNames.profiles,
     title: 'View all profiles',
     component: Profiles
+  },
+  {
+    path: routeNames.nftDetails,
+    title: 'NFT Details',
+    component: NFTDetails
+  },
+  {
+    path: routeNames.bid,
+    title: 'Place bid',
+    component: Bid
   }
 ];
 
