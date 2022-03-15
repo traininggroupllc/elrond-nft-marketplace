@@ -13,7 +13,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <div className='bg-light d-flex flex-column flex-fill wrapper'>
       {window.location.pathname === '/' ||
       window.location.pathname === '/nft_details' ||
-      window.location.pathname === '/bid' ? (
+      window.location.pathname === '/bid' ||
+      window.location.pathname === '/single_collection' ? (
         <Navbar />
       ) : (
         <div>

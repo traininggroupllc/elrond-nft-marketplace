@@ -7,6 +7,7 @@ import Profiles from 'pages/Profiles';
 import withPageTitle from './components/PageTitle';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
+import SingleCollection from './pages/SingleCollection';
 import Transaction from './pages/Transaction';
 
 export const routeNames = {
@@ -20,7 +21,8 @@ export const routeNames = {
   collections: '/collections',
   profiles: '/profiles',
   nftDetails: '/nft_details',
-  bid: '/bid'
+  bid: '/bid',
+  singleCollection: '/single_collection'
 };
 
 const routes: Array<any> = [
@@ -64,6 +66,11 @@ const routes: Array<any> = [
     path: routeNames.bid,
     title: 'Place bid',
     component: Bid
+  },
+  {
+    path: routeNames.singleCollection,
+    title: 'Featured Collection Details',
+    component: SingleCollection
   }
 ];
 

@@ -1,0 +1,25 @@
+.tab__menu {
+    padding-bottom: 20px;
+
+    &::after{
+        width: 100%;
+        content: '';
+        display: block;
+        border-bottom: 1px solid lightgray;
+    }
+
+    & > ul {
+        display: flex;
+        gap: 15px;
+        list-style: none;
+
+        & > a {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            font-weight: $fw-600;
+            color: $dark;
+            font-size: 20px;
+        }
+    }
+}
