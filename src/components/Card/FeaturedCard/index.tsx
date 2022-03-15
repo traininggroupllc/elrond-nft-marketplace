@@ -1,8 +1,15 @@
 import React from 'react';
 
-const index = () => {
+interface Props {
+  isCollection?: boolean;
+}
+
+const index = ({ isCollection }: Props) => {
   return (
-    <div className='featuredCard'>
+    <div
+      style={{ width: `${isCollection && '100%'}` }}
+      className='featuredCard'
+    >
       <div className='card__content'>
         <div className='featuredCard__top'>
           <div>

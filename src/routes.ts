@@ -1,4 +1,5 @@
 import { dAppName } from 'config';
+import Bid from 'pages/Bid';
 import Collections from 'pages/Collections';
 import NFTDetails from 'pages/NFTDetails';
 import NFTs from 'pages/NFTs';
@@ -18,7 +19,8 @@ export const routeNames = {
   nfts: '/nfts',
   collections: '/collections',
   profiles: '/profiles',
-  nftDetails: '/nft_details'
+  nftDetails: '/nft_details',
+  bid: '/bid'
 };
 
 const routes: Array<any> = [
@@ -57,6 +59,11 @@ const routes: Array<any> = [
     path: routeNames.nftDetails,
     title: 'NFT Details',
     component: NFTDetails
+  },
+  {
+    path: routeNames.bid,
+    title: 'Place bid',
+    component: Bid
   }
 ];
 

@@ -1,0 +1,160 @@
+.bid {
+  z-index: 2;
+  background-color: $light;
+  padding-bottom: 30px;
+
+  .bid__top {
+    padding: 20px;
+    background-color: white;
+    box-shadow: $box-shadow-medium;
+    border-radius: 10px;
+
+    svg {
+      height: 50px;
+      width: 50px;
+      margin-bottom: 20px;
+    }
+
+    p:nth-child(2) {
+      font-size: 18px;
+      font-weight: 600;
+      color: $dark;
+    }
+
+    p:nth-child(3) {
+      font-size: 14px;
+      font-weight: 500;
+      color: $dark;
+    }
+
+    button {
+      height: 55px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 60px;
+      padding: 0 30px;
+      margin-top: 20px;
+      position: relative;
+      transition: 0.15s;
+
+      &:hover {
+        top: -1px;
+      }
+    }
+  }
+
+  .bid__bottom {
+    background-color: white;
+    box-shadow: $box-shadow-medium;
+    border-radius: 10px;
+    margin-top: 40px;
+    background-color: $light;
+    overflow: hidden;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-bottom: 30px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      height: 380px;
+      cursor: zoom-in;
+    }
+
+    > div {
+      position: relative;
+      padding: 0 20px;
+
+      > img {
+        position: absolute;
+        top: -20px;
+        left: 20px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: 3px solid $light;
+      }
+
+      h2 {
+        padding-top: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+
+        img {
+          height: 24px;
+          width: 24px;
+          margin-right: 10px;
+          border-radius: 5px;
+        }
+
+        p {
+          margin: 0;
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) {
+  .bid {
+    > * {
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .bid {
+    > * {
+      max-width: 980px;
+    }
+
+    .bid__top {
+      padding: 60px;
+      margin-right: 20px;
+
+      svg {
+        height: 60px;
+        width: 54px;
+      }
+
+      p:nth-child(2) {
+        font-size: 36px;
+      }
+
+      p:nth-child(3) {
+        font-size: 16px;
+      }
+
+      button {
+        height: 60px;
+        padding: 0 40px;
+      }
+    }
+
+    .bid__bottom {
+      margin-top: 0;
+
+      img {
+        height: 340px;
+      }
+    }
+  }
+}

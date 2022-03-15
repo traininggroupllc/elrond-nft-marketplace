@@ -12,7 +12,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className='bg-light d-flex flex-column flex-fill wrapper'>
       {window.location.pathname === '/' ||
-      window.location.pathname === '/nft_details' ? (
+      window.location.pathname === '/nft_details' ||
+      window.location.pathname === '/bid' ? (
         <Navbar />
       ) : (
         <div>
@@ -28,7 +29,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           {children}
         </AuthenticatedRoutesWrapper>
       </main>
-      {window.location.pathname === '/nft_details' ? (
+      {window.location.pathname === '/nft_details' ||
+      window.location.pathname === '/bid' ? (
         <SecondaryFooter />
       ) : (
         <Footer />

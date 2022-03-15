@@ -34,9 +34,11 @@ const NFTCard = ({ image }: { image: string; key: number }) => {
                 <p>11h</p>
               </div>
             </div>
-            <Button variant='dark' className='card__btn'>
-              Place Bid
-            </Button>
+            <Link to='/bid'>
+              <Button variant='dark' className='card__btn'>
+                Place Bid
+              </Button>
+            </Link>
           </Card.Body>
         </Card>
       </Link>

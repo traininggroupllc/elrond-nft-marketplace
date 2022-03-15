@@ -1,5 +1,12 @@
 .secondaryFooter {
-  background-color: $dark;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: var(--st--colors-black100);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://f8n-production.imgix.net/collections/439n4i2u7-Screen%20Shot%202022-02-23%20at%207.23.42%20AM.png?q=50&auto=format%2Ccompress&fit=crop&max-w=1200&max-h=596&exp=-5&blur=180);
 
   .secondaryFooter__top {
     .secondaryFooter__topDetails {
@@ -77,23 +84,27 @@
 
 @media only screen and (min-width: $sm) {
   .secondaryFooter {
+    position: sticky;
     bottom: 0px;
     left: 0px;
     width: 100%;
-    background-image: url(https://f8n-production.imgix.net/collections/439n4i2u7-Screen%20Shot%202022-02-23%20at%207.23.42%20AM.png?q=50&auto=format%2Ccompress&fit=crop&max-w=1200&max-h=596&exp=-5&blur=180);
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: var(--st--colors-black100);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: sticky;
   }
 }
 
 @media only screen and (min-width: $md) {
   .secondaryFooter {
+    .secondaryFooter__top {
+      .secondaryFooter__topDetails {
+        p:nth-child(2) {
+          font-size: 36px;
+        }
+
+        p:nth-child(3) {
+          font-size: 24px;
+        }
+      }
+    }
+
     .secondaryFooter__bottom {
       display: flex;
       justify-content: space-between;
@@ -133,7 +144,6 @@
 
     .secondaryFooter__top {
       display: flex;
-      justify-content: space-between;
       gap: 20px;
       width: 100%;
       padding-bottom: 30px;
@@ -141,17 +151,31 @@
       .secondaryFooter__topCard {
         display: flex;
         gap: 20px;
-        width: 100%;
+        width: 70%;
       }
 
       .secondaryFooter__topDetails {
-        width: 33%;
+        width: 25%;
         align-items: flex-start;
 
         p:last-child {
           text-align: left;
           padding: 0;
         }
+      }
+    }
+  }
+}
+
+.secondaryFooter__bid {
+  background: transparent;
+  margin-top: 60px;
+
+  .secondaryFooter__bottom {
+    > div:last-child {
+      div > p {
+        color: $secondary;
+        font-weight: 600;
       }
     }
   }

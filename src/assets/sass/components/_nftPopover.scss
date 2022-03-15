@@ -1,0 +1,11 @@
+.nftPopover {
+  .popup-content {
+    background-color: red !important;
+    width: 300px;
+    .nftPopover__detailsFirst {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}
