@@ -10,7 +10,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const { search } = useLocation();
   return (
     <div className='bg-light d-flex flex-column flex-fill wrapper'>
-      {window.location.pathname === '/' ? (
+      {window.location.pathname === '/' ||
+      window.location.pathname === '/single_collection' ? (
         <Navbar />
       ) : (
         <div>

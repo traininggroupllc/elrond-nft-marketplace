@@ -5,6 +5,7 @@ import Profiles from 'pages/Profiles';
 import withPageTitle from './components/PageTitle';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
+import SingleCollection from './pages/SingleCollection';
 import Transaction from './pages/Transaction';
 
 export const routeNames = {
@@ -16,6 +17,7 @@ export const routeNames = {
   walletconnect: '/walletconnect',
   nfts: '/nfts',
   collections: '/collections',
+  singleCollection: '/single_collection',
   profiles: '/profiles'
 };
 
@@ -50,6 +52,11 @@ const routes: Array<any> = [
     path: routeNames.profiles,
     title: 'View all profiles',
     component: Profiles
+  },
+  {
+    path: routeNames.singleCollection,
+    title: 'Featured Collection Details',
+    component: SingleCollection
   }
 ];
 
