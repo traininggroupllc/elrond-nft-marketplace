@@ -4,6 +4,7 @@ import Collections from 'pages/Collections';
 import NFTDetails from 'pages/NFTDetails';
 import NFTs from 'pages/NFTs';
 import Profiles from 'pages/Profiles';
+import UserProfile from 'pages/UserProfile';
 import withPageTitle from './components/PageTitle';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
@@ -22,7 +23,8 @@ export const routeNames = {
   profiles: '/profiles',
   nftDetails: '/nft_details',
   bid: '/bid',
-  singleCollection: '/single_collection'
+  singleCollection: '/single_collection',
+  userProfile: '/user_profile'
 };
 
 const routes: Array<any> = [
@@ -71,6 +73,11 @@ const routes: Array<any> = [
     path: routeNames.singleCollection,
     title: 'Featured Collection Details',
     component: SingleCollection
+  },
+  {
+    path: routeNames.userProfile,
+    title: 'User Profile',
+    component: UserProfile
   }
 ];
 

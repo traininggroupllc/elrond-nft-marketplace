@@ -71,8 +71,8 @@
       div > p {
         margin: 0;
         color: $light;
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 14px;
+        font-weight: 600;
       }
 
       > div:first-child {
@@ -111,27 +111,27 @@
       gap: 10px;
 
       > div:first-child {
-        width: 10%;
+        width: 5%;
       }
 
       > div:last-child {
         display: flex;
         justify-content: space-between;
         gap: 20px;
-        width: 90%;
+        width: 95%;
 
         > div:first-child {
-          width: 27%;
+          max-width: 220px;
         }
 
         > div:last-child {
-          width: 70%;
+          max-width: 680px;
         }
 
         div {
           display: flex;
           justify-content: space-between;
-          gap: 10px;
+          gap: 20px;
         }
       }
     }
@@ -170,6 +170,7 @@
 .secondaryFooter__bid {
   background: transparent;
   margin-top: 60px;
+  position: relative;
 
   .secondaryFooter__bottom {
     > div:last-child {

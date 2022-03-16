@@ -1,0 +1,273 @@
+@mixin commonCss(
+  $smFont,
+  $mdFont,
+  $lgFont,
+  $textAlign,
+  $paddingY,
+  $paddingX,
+  $svgHeight,
+  $svgWidth
+) {
+  margin-top: 10px;
+
+  p {
+    margin: 0;
+    width: fit-content;
+  }
+
+  p:first-child {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    font-size: $smFont;
+    border-radius: 20px;
+    padding-right: 12px;
+    box-shadow: $box-shadow;
+    margin: 0;
+
+    span:first-child {
+      background-color: $dark;
+      color: $light;
+      padding: $paddingY $paddingX;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+
+    svg {
+      height: $svgHeight;
+      width: $svgWidth;
+      margin-left: 10px;
+      color: $secondary;
+      cursor: pointer;
+    }
+  }
+
+  p:nth-child(2) {
+    font-size: $lgFont;
+    text-align: $textAlign;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  p:last-child {
+    font-size: $mdFont;
+    font-weight: 600;
+    text-align: $textAlign;
+    background: linear-gradient(
+      to right,
+      #02d602 10%,
+      orange 20%,
+      red 40%,
+      #ff4967 60%,
+      blue 80%,
+      aqua 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.userProfile {
+  margin-top: 100px;
+  background-color: $light;
+  z-index: 99;
+  padding: 0 25px;
+  padding-bottom: 60px;
+
+  .userProfile__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > img {
+      width: 120px;
+      height: 120px;
+      border: 10px solid $light;
+      border-radius: 50%;
+    }
+
+    .userProfile__topAddress {
+      @include commonCss(12px, 18px, 24px, center, 7px, 12px, 14px, 14px);
+    }
+
+    .userProfile__topCollected {
+      display: flex;
+      align-items: center;
+      margin-top: 25px;
+      padding: 10px 20px;
+      box-shadow: $box-shadow;
+      border-radius: 30px;
+
+      p {
+        margin: 0;
+        margin-right: 20px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      img {
+        height: 32px;
+        width: 32px;
+        border: 3px solid $light;
+        border-radius: 50%;
+        margin-left: -10px;
+      }
+
+      p:last-child {
+        display: none;
+      }
+    }
+  }
+
+  .userProfile__bottom {
+    margin-top: 60px;
+    .userProfile__bottomFollower {
+      .userProfile__topAddress {
+        display: none;
+      }
+
+      > div:nth-child(2) {
+        display: flex;
+        align-items: center;
+
+        div {
+          p {
+            margin: 0;
+            margin-right: 20px;
+            font-weight: 600;
+          }
+
+          p:first-child {
+            font-size: 22px;
+            color: $dark;
+          }
+
+          p:last-child {
+            font-size: 16px;
+            color: $secondary;
+
+            &:hover {
+              color: $dark;
+            }
+          }
+        }
+        button {
+          font-size: 16px;
+          font-weight: 600;
+          padding: 12px 30px;
+          border-radius: 30px;
+          border: 2px solid $light-gray;
+        }
+      }
+
+      > div:last-child {
+        margin-top: 30px;
+
+        p {
+          margin: 0;
+        }
+
+        p:first-child {
+          font-size: 16px;
+          font-weight: 600;
+          color: $dark;
+        }
+
+        div {
+          display: flex;
+          margin-left: 10px;
+          margin-top: 15px;
+
+          img {
+            height: 32px;
+            width: 32px;
+            border: 3px solid $light;
+            border-radius: 50%;
+            margin-left: -10px;
+          }
+        }
+
+        p:last-child {
+          font-size: 16px;
+          font-weight: 600;
+          color: $secondary;
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .userProfile__bottomColCre {
+      margin-top: 30px;
+
+      > div:first-child {
+        display: flex;
+        gap: 30px;
+        border-bottom: 1px solid $light-gray;
+
+        p {
+          margin: 0;
+          font-size: 16px;
+          font-weight: 600;
+          padding-bottom: 15px;
+          cursor: pointer;
+
+          span {
+            font-weight: 500;
+            margin-left: 5px;
+          }
+        }
+      }
+
+      > div:last-child {
+        margin-top: 20px;
+        display: flex;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) {
+  .userProfile {
+    .userProfile__top {
+      flex-direction: row;
+      justify-content: space-between;
+
+      > img {
+        height: 180px;
+        width: 180px;
+        margin-top: -40px;
+      }
+
+      .userProfile__topAddress {
+        display: none;
+      }
+
+      .userProfile__topCollected {
+        p:last-child {
+          display: block;
+          margin-left: 10px;
+          color: $secondary;
+        }
+      }
+    }
+
+    .userProfile__bottom {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 30px;
+
+      .userProfile__bottomFollower {
+        grid-column: 1 / 2;
+        .userProfile__topAddress {
+          display: block;
+          @include commonCss(14px, 24px, 36px, left, 9px, 16px, 16px, 16px);
+        }
+      }
+
+      .userProfile__bottomColCre {
+        margin-top: 0;
+        grid-column: 2 / 5;
+      }
+    }
+  }
+}

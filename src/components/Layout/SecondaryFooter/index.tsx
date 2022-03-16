@@ -9,11 +9,13 @@ const SecondaryFooter = () => {
   return (
     <div
       className={`secondaryFooter ${
-        window.location.pathname === '/bid' && 'secondaryFooter__bid'
+        (window.location.pathname === '/bid' ||
+          window.location.pathname === '/user_profile') &&
+        'secondaryFooter__bid'
       }`}
     >
       <div className='container-lg'>
-        {window.location.pathname !== '/bid' && (
+        {window.location.pathname === '/nft_details' && (
           <div className='secondaryFooter__top'>
             <div className='secondaryFooter__topDetails'>
               <img
@@ -30,7 +32,7 @@ const SecondaryFooter = () => {
             </div>
             <div className='secondaryFooter__topCard'>
               {NFTs.map((i) => (
-                <NFTCard key={i} />
+                <NFTCard isSold={false} key={i} />
               ))}
             </div>
           </div>
