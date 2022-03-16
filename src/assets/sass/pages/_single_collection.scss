@@ -1,15 +1,19 @@
 .single__collection {
     width: 100%;
-    min-height: 100vh;
-    margin-bottom: 120px;
+    min-height: 800px;
+    margin-bottom: 130px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background: url("https://f8n-production.imgix.net/collections/kx9csndh9-COVER.jpg?q=75&w=1600&auto=format%2Ccompress&fit=fill")
-        rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to right, rgba(121, 121, 107, .2), rgba(121, 121, 107, .4)), url("https://f8n-production.imgix.net/collections/kx9csndh9-COVER.jpg?q=75&w=1600&auto=format%2Ccompress&fit=fill");
+
 
     .top__content {
-        > img {
+        width: 98%;
+        margin: auto;
+        padding: 80px 0;
+
+        & > img {
             display: block;
             height: 186px;
             width: 186px;
@@ -100,13 +104,13 @@
 
     .collection__overview {
         position: relative;
-        width: 100%;
+        width: 98%;
         margin: auto;
         display: grid;
         grid-gap: 20px;
         grid-template-columns: repeat(2, 1fr);
         position: absolute;
-        bottom: -88px;
+        bottom: -26%;
         left: 50%;
         transform: translate(-50%, 50%);
         z-index: 1;
@@ -118,18 +122,34 @@
 
         .collection__overview__left {
             width: 90%;
-            padding: 32px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 25px;
+            // display: flex;
+            // justify-content: space-between;
+            // align-items: center;
             border-radius: 8px;
             box-shadow: $box-shadow-medium;
             background-color: white;
 
+            .owned__by{
+                display: flex;
+                gap: 8px;
+                align-items: center;
+
+                & > img{
+                    width: 25px;
+                    border-radius: 50%;
+                }
+            }
+
             p {
                 color: $secondary;
                 font-size: 18px;
-                font-weight: $fw-600;
+                font-weight: bold;
+            }
+            h2{
+                font-size: 26px;
+                color: $dark;
+                font-weight: bold;
             }
         }
         .collection__overview__right {
@@ -186,6 +206,11 @@
             }
         }
     }
+
+}
+.bottom__content{
+    width: 98%;
+    margin: auto;
 }
 
 .sorting__dropdown {

@@ -1,0 +1,38 @@
+.collection__footer{
+    // width: 100%;
+    padding: 40px 0;
+
+
+    .footer__link{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+
+        
+        & > svg{
+            width: 50px;
+        }
+        li{
+            font-size: 16px;
+            color: $secondary;
+            font-weight: $fw-600;
+        }
+
+        @media (max-width: 600px){
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+
+    div:last-child{
+        display: flex;
+        justify-content: flex-end;
+
+        @media(max-width: 600px){
+            justify-content: flex-start;
+        }
+    }
+}

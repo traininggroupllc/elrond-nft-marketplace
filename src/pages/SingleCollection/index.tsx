@@ -3,15 +3,20 @@ import { Container, Row } from 'react-bootstrap';
 import { BsDownload } from 'react-icons/bs';
 import { HiDotsHorizontal } from 'react-icons/hi';
 import { RiShareBoxFill } from 'react-icons/ri';
+import NFTCard from 'components/Card/NFTCard';
+import SingleCollectionFooter from 'components/Layout/SingleCollectionFooter';
+import SingleCollectionNav from 'components/Layout/SingleCollectionNav';
 import NavigationTab from 'components/SingleCollection/NavigationTab/NavigationTab';
-import Featured from '../../components/Card/FeaturedCard';
+import NFTImage1 from '../../assets/img/nft-img/nft-crypto.gif';
+import NFTImage2 from '../../assets/img/nft-img/nft2.gif';
 
-const NFTs = [1, 2, 3, 4, 5, 6, 7, 8];
+const data = [NFTImage1, NFTImage2, NFTImage1, NFTImage2, NFTImage1, NFTImage2];
 
 const index = () => {
   return (
     <section>
       <Container fluid className='single__collection'>
+        <SingleCollectionNav />
         <div className='top__content'>
           <img
             src='https://f8n-production.imgix.net/collections/hb8dlcndu-LOGO.png?q=50&w=160&h=160&auto=format%2Ccompress&fit=crop&dpr=2'
@@ -37,14 +42,26 @@ const index = () => {
           </div>
         </div>
         <Container fluid className='collection__overview'>
-          <div className='collection__overview__left'>
+          <Row
+            xs={2}
+            sm={2}
+            md={2}
+            xl={4}
+            className='collection__overview__left'
+          >
             <div className=''>
               <p>Collection of</p>
               <h2>9</h2>
             </div>
-            <div className=''>
+            <div>
               <p>Owned by</p>
-              <h2>1</h2>
+              <div className='owned__by'>
+                <h2>1</h2>
+                <img
+                  src='https://f8n-production.imgix.net/creators/profile/baqfv8nrd-aye-gif-3ripzh.gif?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
+                  alt=''
+                />
+              </div>
             </div>
             <div className=''>
               <p>Floor Price</p>
@@ -54,7 +71,7 @@ const index = () => {
               <p>Total Sales</p>
               <h2> - </h2>
             </div>
-          </div>
+          </Row>
           <div className='collection__overview__right'>
             <div className=''>
               <HiDotsHorizontal className='threeDot__icon' />
@@ -66,7 +83,7 @@ const index = () => {
           </div>
         </Container>
       </Container>
-      <section className=''>
+      <section className='bottom__content'>
         <Container fluid>
           <NavigationTab />
 
@@ -79,12 +96,13 @@ const index = () => {
             </select>
           </div>
           <Row xs={1} sm={2} md={3} xxl={4}>
-            {NFTs.map((nft) => (
-              <Featured key={nft} />
+            {data.map((img, i) => (
+              <NFTCard key={i} image={img} />
             ))}
           </Row>
         </Container>
       </section>
+      <SingleCollectionFooter />
     </section>
   );
 };

@@ -4,14 +4,7 @@ import { Button, Col, Row } from 'react-bootstrap';
 const Bid = () => {
   return (
     <div className='container-lg bid'>
-      <Row
-        lg={2}
-        md={1}
-        sm={1}
-        xs={1}
-        f
-        className='justify-content-center mt-5'
-      >
+      <Row lg={2} md={1} sm={1} xs={1} className='justify-content-center mt-5'>
         <Col lg={8}>
           <div className='bid__top'>
             <svg

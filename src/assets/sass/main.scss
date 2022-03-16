@@ -22,9 +22,11 @@ Override Bootstrap variables only above.
 
 // layout/
 @import './layout/navigation';
+@import './layout/singleCollection_nav';
 @import './layout/dashboard';
 @import './layout/footer';
 @import './layout/secondaryFooter';
+@import './layout/singleCollection_footer';
 
 // themes/
 @import './themes/pageState';

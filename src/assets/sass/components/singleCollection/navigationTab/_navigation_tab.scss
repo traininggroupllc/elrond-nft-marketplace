@@ -10,16 +10,19 @@
 
     & > ul {
         display: flex;
-        gap: 15px;
+        padding: 8px 0;
+        gap: 18px;
         list-style: none;
 
         & > a {
             position: relative;
             display: block;
+            text-align: left;
             text-decoration: none;
-            font-weight: $fw-600;
+            font-weight: bold;
             color: $dark;
-            font-size: 20px;
+            font-size: 18px;
         }
+
     }
 }
