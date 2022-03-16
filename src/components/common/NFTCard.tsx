@@ -3,7 +3,11 @@ import { Button, Card, Col, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NFTImg1 from '../../assets/img/nft-img/nft-crypto.gif';
 
-const NFTCard = () => {
+interface Props {
+  isSold?: boolean;
+}
+
+const NFTCard = ({ isSold = true }: Props) => {
   return (
     <Col md='6' lg='4'>
       <Link to='/nft_details'>
@@ -36,9 +40,15 @@ const NFTCard = () => {
               </div>
             </div>
             <Link to='/bid'>
-              <Button variant='dark' className='card__btn'>
-                Place Bid
-              </Button>
+              {isSold ? (
+                <Button variant='dark' className='card__btn'>
+                  Place Bid
+                </Button>
+              ) : (
+                <Button variant='light' className='card__btnSold'>
+                  Make offer
+                </Button>
+              )}
             </Link>
           </Card.Body>
         </Card>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Popup from 'reactjs-popup';
+import UserPopover from 'components/common/UserPopover';
 import Featured from '../../components/Card/FeaturedCard';
 import NFTDetailsCommonBtn from './NFTDetailsCommonBtn';
-import NFTPopover from './NFTPopover';
 import ProvenceCard from './ProvenceCard';
 
 const NFTDetails = () => {
@@ -86,7 +86,7 @@ const NFTDetails = () => {
                   <div>
                     <p className='nftDetails__bottomColCreTitle'>Created by</p>
                     <div>
-                      <NFTPopover />
+                      <UserPopover />
                     </div>
                   </div>
                   <div>
@@ -185,24 +185,56 @@ const NFTDetails = () => {
                   </svg>
                   <p>View on IPFC</p>
                 </div>
+                <div className='nftDetails__bottomTags'>
+                  <p>Tags</p>
+                  <div>
+                    {['rikka', 'mother', 'love', 'baby', 'word', 'memory'].map(
+                      (tag) => (
+                        <p key={tag}>{tag}</p>
+                      )
+                    )}
+                  </div>
+                </div>
                 <div className='nftDetails__bottomDetailsBtn'>
-                  <Button variant='light'>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='24'
-                      height='24'
-                      viewBox='0 0 24 24'
-                      fill='none'
-                      stroke='currentColor'
-                      strokeWidth='2'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
+                  <Popup
+                    trigger={
+                      <Button variant='light'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          width='24'
+                          height='24'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                        >
+                          <circle cx='12' cy='12' r='1' />
+                          <circle cx='19' cy='12' r='1' />
+                          <circle cx='5' cy='12' r='1' />
+                        </svg>
+                      </Button>
+                    }
+                    position='bottom left'
+                    closeOnDocumentClick
+                    arrow={false}
+                  >
+                    <Button
+                      style={{
+                        color: 'red',
+                        fontSize: '16px',
+                        padding: '10px',
+                        fontWeight: '600',
+                        marginTop: '10px',
+                        boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.05)'
+                      }}
+                      variant='light'
                     >
-                      <circle cx='12' cy='12' r='1' />
-                      <circle cx='19' cy='12' r='1' />
-                      <circle cx='5' cy='12' r='1' />
-                    </svg>
-                  </Button>
+                      🚫 Report
+                    </Button>
+                  </Popup>
+
                   <Button variant='light'>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -227,10 +259,7 @@ const NFTDetails = () => {
               <h2>Provenance</h2>
               <ProvenceCard />
               <div className='nftDetails__bottomAuction'>
-                <img
-                  src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
-                  alt=''
-                />
+                <UserPopover imageOnly={true} />
                 <p>
                   Auction own by <span>@kanf</span>
                 </p>

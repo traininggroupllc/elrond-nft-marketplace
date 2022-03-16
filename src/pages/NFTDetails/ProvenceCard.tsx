@@ -1,4 +1,5 @@
 import React from 'react';
+import UserPopover from '../../components/common/UserPopover';
 
 const ProvenceCard = () => {
   const shareSVG = (
@@ -22,10 +23,7 @@ const ProvenceCard = () => {
   return (
     <div className='nftDetails__bottomBottomCard'>
       <div>
-        <img
-          src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
-          alt=''
-        />
+        <UserPopover imageOnly={true} />
       </div>
       <div>
         <p>1.00 ETH</p>

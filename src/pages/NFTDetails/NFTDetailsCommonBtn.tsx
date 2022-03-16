@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Spinner } from 'react-bootstrap';
-import NFTPopover from './NFTPopover';
+import UserPopover from '../../components/common/UserPopover';
 
 const NFTDetailsCommonBtn = () => {
   return (
@@ -27,7 +27,7 @@ const NFTDetailsCommonBtn = () => {
       </div>
       <div className='nftDetails__commonBtnBottom'>
         <p>Owned by</p>
-        <NFTPopover />
+        <UserPopover />
       </div>
     </>
   );

@@ -30,7 +30,7 @@ const SecondaryFooter = () => {
             </div>
             <div className='secondaryFooter__topCard'>
               {NFTs.map((i) => (
-                <NFTCard key={i} />
+                <NFTCard isSold={false} key={i} />
               ))}
             </div>
           </div>

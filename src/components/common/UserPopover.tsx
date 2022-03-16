@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Popup from 'reactjs-popup';
 
-const NFTPopover = () => {
+interface Props {
+  imageOnly?: boolean;
+}
+
+const UserPopover = ({ imageOnly }: Props) => {
+  const [hover, setHover] = useState(false);
+
   return (
     <div className='nftPopover'>
       <Popup
         trigger={
-          <Button variant='light'>
+          imageOnly ? (
             <img
+              style={{ cursor: 'pointer' }}
               src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
               alt='created_by'
             />
-            <p>@rozumnyib</p>
-          </Button>
+          ) : (
+            <Button variant='light'>
+              <img
+                src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
+                alt='created_by'
+              />
+              <p>@rozumnyib</p>
+            </Button>
+          )
         }
-        position='bottom center'
+        position={imageOnly ? 'bottom center' : 'bottom left'}
         on={['hover', 'focus']}
         arrow={false}
       >
@@ -46,9 +60,13 @@ const NFTPopover = () => {
               style={{
                 height: '45px',
                 borderRadius: '30px',
-                padding: '0 20px'
+                padding: '0 20px',
+                border: '2px solid lightgray',
+                fontWeight: '600'
               }}
-              variant='light'
+              variant={hover ? 'dark' : 'light'}
+              onMouseOver={() => setHover(true)}
+              onMouseOut={() => setHover(false)}
             >
               Follow
             </Button>
@@ -191,4 +209,4 @@ const NFTPopover = () => {
   );
 };
 
-export default NFTPopover;
+export default UserPopover;
