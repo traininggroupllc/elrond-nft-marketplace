@@ -227,7 +227,8 @@ const NFTDetails = () => {
                         padding: '10px',
                         fontWeight: '600',
                         marginTop: '10px',
-                        boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.05)'
+                        borderRadius: '8px',
+                        boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)'
                       }}
                       variant='light'
                     >

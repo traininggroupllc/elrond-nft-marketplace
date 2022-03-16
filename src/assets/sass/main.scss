@@ -19,6 +19,7 @@ Override Bootstrap variables only above.
 @import './pages/common/tabnavigation';
 @import './pages/nftDetails';
 @import './pages/bid';
+@import './pages/userProfile';
 
 // layout/
 @import './layout/navigation';
@@ -33,4 +34,4 @@ Override Bootstrap variables only above.
 // components
 @import './components/nftSidebar';
 @import './components/nfts';
-@import './components//singleCollection/navigationTab/navigation_tab'
+@import './components//singleCollection/navigationTab/navigation_tab';

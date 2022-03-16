@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import UserPopover from '../../components/common/UserPopover';
 
 const NFTDetailsCommonBtn = () => {
@@ -13,7 +14,9 @@ const NFTDetailsCommonBtn = () => {
             <Spinner animation='grow' variant='light' size='sm' /> LIVE{' '}
             <span>6h : 38m : 11s</span>
           </p>
-          <Button variant='dark'>Place bid</Button>
+          <Link to='/bid'>
+            <Button variant='dark'>Place bid</Button>
+          </Link>
         </div>
         <div>
           <div>
@@ -27,7 +30,7 @@ const NFTDetailsCommonBtn = () => {
       </div>
       <div className='nftDetails__commonBtnBottom'>
         <p>Owned by</p>
-        <UserPopover />
+        <UserPopover bottomCenter={true} />
       </div>
     </>
   );

@@ -14,7 +14,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       {window.location.pathname === '/' ||
       window.location.pathname === '/nft_details' ||
       window.location.pathname === '/bid' ||
-      window.location.pathname === '/single_collection' ? (
+      window.location.pathname === '/single_collection' ||
+      window.location.pathname === '/user_profile' ? (
         <Navbar />
       ) : (
         <div>
@@ -31,7 +32,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </AuthenticatedRoutesWrapper>
       </main>
       {window.location.pathname === '/nft_details' ||
-      window.location.pathname === '/bid' ? (
+      window.location.pathname === '/bid' ||
+      window.location.pathname === '/user_profile' ? (
         <SecondaryFooter />
       ) : (
         <Footer />

@@ -1,36 +1,40 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 
 interface Props {
   imageOnly?: boolean;
+  bottomCenter?: boolean;
 }
 
-const UserPopover = ({ imageOnly }: Props) => {
+const UserPopover = ({ imageOnly, bottomCenter }: Props) => {
   const [hover, setHover] = useState(false);
 
   return (
     <div className='nftPopover'>
       <Popup
         trigger={
-          imageOnly ? (
-            <img
-              style={{ cursor: 'pointer' }}
-              src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
-              alt='created_by'
-            />
-          ) : (
-            <Button variant='light'>
+          <Link to='/user_profile'>
+            {imageOnly ? (
               <img
+                style={{ cursor: 'pointer' }}
                 src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
                 alt='created_by'
               />
-              <p>@rozumnyib</p>
-            </Button>
-          )
+            ) : (
+              <Button variant='light'>
+                <img
+                  src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
+                  alt='created_by'
+                />
+                <p>@rozumnyib</p>
+              </Button>
+            )}
+          </Link>
         }
-        position={imageOnly ? 'bottom center' : 'bottom left'}
-        on={['hover', 'focus']}
+        position={imageOnly || bottomCenter ? 'bottom center' : 'bottom left'}
+        on={['hover']}
         arrow={false}
       >
         <div
@@ -51,18 +55,32 @@ const UserPopover = ({ imageOnly }: Props) => {
               marginBottom: '30px'
             }}
           >
-            <img
-              style={{ width: '60px', height: '60px', borderRadius: '50%' }}
-              src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
-              alt='created_by'
-            />
+            <Link
+              style={{
+                outline: 'none'
+              }}
+              to='/user_profile'
+            >
+              <div>
+                <img
+                  style={{
+                    width: '60px',
+                    height: '60px',
+                    borderRadius: '50%'
+                  }}
+                  src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
+                  alt='created_by'
+                />
+              </div>
+            </Link>
             <Button
               style={{
                 height: '45px',
                 borderRadius: '30px',
                 padding: '0 20px',
                 border: '2px solid lightgray',
-                fontWeight: '600'
+                fontWeight: '600',
+                outline: 'none'
               }}
               variant={hover ? 'dark' : 'light'}
               onMouseOver={() => setHover(true)}
@@ -72,12 +90,15 @@ const UserPopover = ({ imageOnly }: Props) => {
             </Button>
           </div>
           <div>
-            <h3 style={{ fontSize: '36px' }}>Rinatto</h3>
-            <p
-              style={{
-                fontSize: '20px',
-                fontWeight: '600',
-                background: `linear-gradient(
+            <Link to='/user_profile'>
+              <h3 style={{ fontSize: '36px', color: 'black' }}>Rinatto</h3>
+            </Link>
+            <Link to='/user_profile'>
+              <p
+                style={{
+                  fontSize: '20px',
+                  fontWeight: '600',
+                  background: `linear-gradient(
         to right,
         green 0%,
         orange 2%,
@@ -86,12 +107,13 @@ const UserPopover = ({ imageOnly }: Props) => {
         blue 40%,
         aqua 100%
       )`,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}
-            >
-              @Lbank
-            </p>
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}
+              >
+                @Lbank
+              </p>
+            </Link>
             <p style={{ fontSize: '16px' }}>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor,
               at! Lorem ipsum dolor sit amet consectetur adipisicing elit.
