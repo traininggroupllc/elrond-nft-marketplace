@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import { PopupPosition } from 'reactjs-popup/dist/types';
 
 interface Props {
   imageOnly?: boolean;
-  bottomCenter?: boolean;
+  position?: PopupPosition;
 }
 
-const UserPopover = ({ imageOnly, bottomCenter }: Props) => {
+const UserPopover = ({ imageOnly, position }: Props) => {
   const [hover, setHover] = useState(false);
 
   return (
@@ -33,7 +34,7 @@ const UserPopover = ({ imageOnly, bottomCenter }: Props) => {
             )}
           </Link>
         }
-        position={imageOnly || bottomCenter ? 'bottom center' : 'bottom left'}
+        position={position ? position : 'bottom center'}
         on={['hover']}
         arrow={false}
       >

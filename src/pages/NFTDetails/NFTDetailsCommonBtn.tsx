@@ -30,7 +30,7 @@ const NFTDetailsCommonBtn = () => {
       </div>
       <div className='nftDetails__commonBtnBottom'>
         <p>Owned by</p>
-        <UserPopover bottomCenter={true} />
+        <UserPopover />
       </div>
     </>
   );

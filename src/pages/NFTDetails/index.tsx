@@ -86,7 +86,7 @@ const NFTDetails = () => {
                   <div>
                     <p className='nftDetails__bottomColCreTitle'>Created by</p>
                     <div>
-                      <UserPopover />
+                      <UserPopover position='bottom left' />
                     </div>
                   </div>
                   <div>
@@ -235,7 +235,6 @@ const NFTDetails = () => {
                       🚫 Report
                     </Button>
                   </Popup>
-
                   <Button variant='light'>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
