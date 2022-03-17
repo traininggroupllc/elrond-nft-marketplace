@@ -16,7 +16,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       window.location.pathname === '/bid' ||
       window.location.pathname === '/single_collection' ||
       window.location.pathname === '/user_profile' ? (
-        <Navbar />
+        <> {window.location.pathname === '/user_profile' ? '' : <Navbar />}</>
       ) : (
         <div>
           <Navbar />

@@ -18,6 +18,25 @@ const UserProfileModal = ({
   const [hover, setHover] = useState<number | null>();
   const [hoverDiv, setHoverDiv] = useState<number | null>();
 
+  const closeSvg = (
+    <svg
+      onClick={handleCloseModal}
+      style={{ marginRight: '15px', cursor: 'pointer' }}
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <line x1='18' y1='6' x2='6' y2='18' />
+      <line x1='6' y1='6' x2='18' y2='18' />
+    </svg>
+  );
+
   return (
     <Popup
       overlayStyle={{ background: '#000000e8' }}
@@ -33,7 +52,6 @@ const UserProfileModal = ({
       open={modalOpen}
       modal
       lockScroll
-      closeOnDocumentClick
     >
       <div
         style={{
@@ -48,7 +66,14 @@ const UserProfileModal = ({
         className='userProfileModal'
       >
         {modalType === 'createdBy' ? (
-          <div style={{ borderBottom: '1px solid lightgray' }}>
+          <div
+            style={{
+              borderBottom: '1px solid lightgray',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center'
+            }}
+          >
             <p
               style={{
                 fontSize: '16px',
@@ -62,41 +87,52 @@ const UserProfileModal = ({
             >
               Created by
             </p>
+            {closeSvg}
           </div>
         ) : (
-          <div style={{ borderBottom: '1px solid lightgray', display: 'flex' }}>
-            <p
-              onClick={() => handelModalType('following')}
-              style={{
-                fontSize: '16px',
-                fontWeight: '600',
-                padding: '15px 0',
-                margin: '0 20px',
-                width: 'fit-content',
-                borderBottom: `${
-                  modalType === 'following' ? '2px solid black' : 'none'
-                }`,
-                cursor: 'pointer'
-              }}
-            >
-              Following
-            </p>
-            <p
-              onClick={() => handelModalType('followers')}
-              style={{
-                fontSize: '16px',
-                fontWeight: '600',
-                padding: '15px 0',
-                margin: '0 20px',
-                width: 'fit-content',
-                borderBottom: `${
-                  modalType === 'followers' ? '2px solid black' : 'none'
-                }`,
-                cursor: 'pointer'
-              }}
-            >
-              Followers
-            </p>
+          <div
+            style={{
+              borderBottom: '1px solid lightgray',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center'
+            }}
+          >
+            <div style={{ display: 'flex', height: '100%' }}>
+              <p
+                onClick={() => handelModalType('following')}
+                style={{
+                  fontSize: '16px',
+                  fontWeight: '600',
+                  padding: '15px 0',
+                  margin: '0 20px',
+                  width: 'fit-content',
+                  borderBottom: `${
+                    modalType === 'following' ? '2px solid black' : 'none'
+                  }`,
+                  cursor: 'pointer'
+                }}
+              >
+                Following
+              </p>
+              <p
+                onClick={() => handelModalType('followers')}
+                style={{
+                  fontSize: '16px',
+                  fontWeight: '600',
+                  padding: '15px 0',
+                  margin: '0 20px',
+                  width: 'fit-content',
+                  borderBottom: `${
+                    modalType === 'followers' ? '2px solid black' : 'none'
+                  }`,
+                  cursor: 'pointer'
+                }}
+              >
+                Followers
+              </p>
+            </div>
+            {closeSvg}
           </div>
         )}
 

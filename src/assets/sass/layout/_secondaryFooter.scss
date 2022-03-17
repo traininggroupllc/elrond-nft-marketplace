@@ -108,7 +108,7 @@
     .secondaryFooter__bottom {
       display: flex;
       justify-content: space-between;
-      gap: 10px;
+      height: 100%;
 
       > div:first-child {
         width: 5%;
@@ -117,8 +117,10 @@
       > div:last-child {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         gap: 20px;
         width: 95%;
+        height: 100%;
 
         > div:first-child {
           max-width: 220px;
@@ -131,6 +133,9 @@
         div {
           display: flex;
           justify-content: space-between;
+          align-items: center;
+          padding-top: 5px;
+          height: 100%;
           gap: 20px;
         }
       }

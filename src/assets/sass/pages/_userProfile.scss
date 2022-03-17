@@ -67,12 +67,25 @@
   }
 }
 
+.userProfile__nav {
+  background: linear-gradient(#00000067, #00000067),
+    url('https://f8n-production.imgix.net/creators/profile/6x7pqrpj0-sunflower-jpg-1vrgsz.jpg?q=75&w=1600&auto=format%2Ccompress&fit=fill');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 180px;
+
+  > * {
+    z-index: 2;
+  }
+}
+
 .userProfile {
-  margin-top: 100px;
   background-color: $light;
   z-index: 99;
   padding: 0 25px;
   padding-bottom: 60px;
+  z-index: 1;
 
   .userProfile__top {
     display: flex;
@@ -84,6 +97,8 @@
       height: 120px;
       border: 10px solid $light;
       border-radius: 50%;
+      margin-top: -60px;
+      z-index: 3;
     }
 
     .userProfile__topAddress {
@@ -94,7 +109,7 @@
       display: flex;
       align-items: center;
       margin-top: 25px;
-      padding: 10px 20px;
+      padding: 15px 20px;
       box-shadow: $box-shadow;
       border-radius: 30px;
       cursor: pointer;
@@ -204,6 +219,7 @@
           font-weight: 600;
           color: $secondary;
           margin-top: 20px;
+          cursor: pointer;
         }
       }
     }
@@ -353,6 +369,10 @@
 }
 
 @media only screen and (min-width: $md) {
+  .userProfile__nav {
+    height: 280px;
+  }
+
   .userProfile {
     .userProfile__top {
       flex-direction: row;
@@ -361,7 +381,7 @@
       > img {
         height: 180px;
         width: 180px;
-        margin-top: -40px;
+        margin-top: -120px;
       }
 
       .userProfile__topAddress {
@@ -369,10 +389,14 @@
       }
 
       .userProfile__topCollected {
+        margin-top: -60px;
+        background-color: $light;
+
         p:last-child {
           display: block;
           margin-left: 10px;
           color: $secondary;
+          margin-right: 0;
 
           &:hover {
             color: $dark;

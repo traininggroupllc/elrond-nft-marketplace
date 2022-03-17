@@ -9,6 +9,7 @@ import { ReactComponent as ElrondLogo } from '../../../assets/img/elrond.svg';
 const SingleCollectionNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [focus, setFocus] = useState(false);
   const { address } = useGetAccountInfo();
 
   const isLoggedIn = Boolean(address);
@@ -62,8 +63,19 @@ const SingleCollectionNav = () => {
             </NavItem>
             <NavItem className='collection_navBar__navItem'>
               <div className='d-flex align-items-center'>
-                <AiOutlineSearch className='collection_search__icon' />
-                <input type='text' placeholder='Search Foundation...' />
+                <AiOutlineSearch
+                  className={
+                    focus
+                      ? 'collection_search__iconFocus'
+                      : 'collection_search__icon'
+                  }
+                />
+                <input
+                  onFocusCapture={() => setFocus(true)}
+                  onBlur={() => setFocus(false)}
+                  type='text'
+                  placeholder='Search Foundation...'
+                />
               </div>
             </NavItem>
             <NavItem className='collection_navBar__navItem'>

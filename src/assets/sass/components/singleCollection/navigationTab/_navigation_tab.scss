@@ -1,28 +1,28 @@
 .tab__menu {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
+  z-index: 99;
 
-    &::after{
-        width: 100%;
-        content: '';
-        display: block;
-        border-bottom: 1px solid lightgray;
+  &::after {
+    width: 100%;
+    content: '';
+    display: block;
+    border-bottom: 1px solid lightgray;
+  }
+
+  & > ul {
+    display: flex;
+    padding: 8px 0;
+    gap: 18px;
+    list-style: none;
+
+    & > a {
+      position: relative;
+      display: block;
+      text-align: left;
+      text-decoration: none;
+      font-weight: bold;
+      color: $dark;
+      font-size: 18px;
     }
-
-    & > ul {
-        display: flex;
-        padding: 8px 0;
-        gap: 18px;
-        list-style: none;
-
-        & > a {
-            position: relative;
-            display: block;
-            text-align: left;
-            text-decoration: none;
-            font-weight: bold;
-            color: $dark;
-            font-size: 18px;
-        }
-
-    }
+  }
 }
