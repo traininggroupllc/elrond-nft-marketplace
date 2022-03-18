@@ -10,7 +10,8 @@ const SecondaryFooter = () => {
     <div
       className={`secondaryFooter ${
         (window.location.pathname === '/bid' ||
-          window.location.pathname === '/user_profile') &&
+          window.location.pathname === '/user_profile' ||
+          window.location.pathname === '/single_collection') &&
         'secondaryFooter__bid'
       }`}
     >

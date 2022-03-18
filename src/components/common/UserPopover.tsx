@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import { PopupPosition } from 'reactjs-popup/dist/types';
+import UserProfileModal from './UserProfileModal';
 
 interface Props {
   imageOnly?: boolean;
@@ -11,6 +12,25 @@ interface Props {
 
 const UserPopover = ({ imageOnly, position }: Props) => {
   const [hover, setHover] = useState(false);
+  const [mouseOver, setMouseOver] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalType, setModalType] = useState('');
+  const [popupOpen, setPopupOpen] = useState(true);
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setModalType('');
+    setPopupOpen(false);
+  };
+
+  const handelModalOpen = (type: string) => {
+    setModalOpen(true);
+    setModalType(type);
+  };
+
+  const handelModalType = (type: string) => {
+    setModalType(type);
+  };
 
   return (
     <div className='nftPopover'>
@@ -34,9 +54,13 @@ const UserPopover = ({ imageOnly, position }: Props) => {
             )}
           </Link>
         }
+        {...(!popupOpen && { open: false })}
         position={position ? position : 'bottom center'}
-        on={['hover']}
+        on={['hover', 'focus']}
+        onOpen={() => setPopupOpen(true)}
         arrow={false}
+        nested
+        closeOnDocumentClick
       >
         <div
           style={{
@@ -195,7 +219,12 @@ const UserPopover = ({ imageOnly, position }: Props) => {
               marginTop: '40px'
             }}
           >
-            <div style={{ marginRight: '15px' }}>
+            <div
+              onMouseOver={() => setMouseOver('following')}
+              onMouseOut={() => setMouseOver('')}
+              onClick={() => handelModalOpen('following')}
+              style={{ marginRight: '15px', cursor: 'pointer' }}
+            >
               <p style={{ fontSize: '24px', fontWeight: '600', margin: '0' }}>
                 80
               </p>
@@ -204,13 +233,18 @@ const UserPopover = ({ imageOnly, position }: Props) => {
                   fontSize: '16px',
                   fontWeight: '600',
                   margin: '0',
-                  color: '#666666'
+                  color: `${mouseOver === 'following' ? 'black' : '#666666'}`
                 }}
               >
                 Following
               </p>
             </div>
-            <div>
+            <div
+              onMouseOver={() => setMouseOver('followers')}
+              onMouseOut={() => setMouseOver('')}
+              onClick={() => handelModalOpen('followers')}
+              style={{ cursor: 'pointer' }}
+            >
               <p style={{ fontSize: '24px', fontWeight: '600', margin: '0' }}>
                 200
               </p>
@@ -219,13 +253,19 @@ const UserPopover = ({ imageOnly, position }: Props) => {
                   fontSize: '16px',
                   fontWeight: '600',
                   margin: '0',
-                  color: '#666666'
+                  color: `${mouseOver === 'followers' ? 'black' : '#666666'}`
                 }}
               >
                 Followers
               </p>
             </div>
           </div>
+          <UserProfileModal
+            handleCloseModal={handleCloseModal}
+            modalType={modalType}
+            modalOpen={modalOpen}
+            handelModalType={handelModalType}
+          />
         </div>
       </Popup>
     </div>

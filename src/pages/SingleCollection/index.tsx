@@ -1,110 +1,187 @@
-import React from 'react';
-import { Container, Row } from 'react-bootstrap';
-import { BsDownload } from 'react-icons/bs';
-import { HiDotsHorizontal } from 'react-icons/hi';
+import React, { useState } from 'react';
+import { Button, Row } from 'react-bootstrap';
 import { RiShareBoxFill } from 'react-icons/ri';
-import NFTCard from 'components/Card/NFTCard';
-import SingleCollectionFooter from 'components/Layout/SingleCollectionFooter';
+import Popup from 'reactjs-popup';
 import SingleCollectionNav from 'components/Layout/SingleCollectionNav';
-import NavigationTab from 'components/SingleCollection/NavigationTab/NavigationTab';
-import NFTImage1 from '../../assets/img/nft-img/nft-crypto.gif';
-import NFTImage2 from '../../assets/img/nft-img/nft2.gif';
+import NFTCard from 'components/common/NFTCard';
+import UserPopover from 'components/common/UserPopover';
 
-const data = [NFTImage1, NFTImage2, NFTImage1, NFTImage2, NFTImage1, NFTImage2];
-
-const index = () => {
+const SingleCollection = () => {
+  const [selectedTab, setSelectedTab] = useState('nfts');
   return (
-    <section>
-      <Container fluid className='single__collection'>
-        <SingleCollectionNav />
-        <div className='top__content'>
-          <img
-            src='https://f8n-production.imgix.net/collections/hb8dlcndu-LOGO.png?q=50&w=160&h=160&auto=format%2Ccompress&fit=crop&dpr=2'
-            alt=''
-            className='profile__img'
-          />
-          <button>
-            PIT
-            <RiShareBoxFill className='icon' />
-          </button>
-          <h2>The Pit</h2>
-
-          <div className='icon__link'>
+    <>
+      <div className='singleCollection'>
+        <div className='singleCollection__top'>
+          <SingleCollectionNav />
+          <div className='container-xl'>
             <div>
               <img
-                src='https://f8n-production.imgix.net/creators/profile/baqfv8nrd-aye-gif-3ripzh.gif?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
+                src='https://f8n-production.imgix.net/collections/hb8dlcndu-LOGO.png?q=50&w=160&h=160&auto=format%2Ccompress&fit=crop&dpr=2'
                 alt=''
               />
             </div>
+            <p>
+              PIT
+              <RiShareBoxFill className='singleCollection__topShareIcon' />
+            </p>
+            <h2>The Pit</h2>
+            <UserPopover position='bottom left' />
+          </div>
+        </div>
+        <div className=' container-xl singleCollection__bottom'>
+          <div className='singleCollection__bottomTop'>
             <div>
-              <h6>@LUCKYME</h6>
+              <div>
+                <div>
+                  <p>Collection of</p>
+                  <p>9</p>
+                </div>
+                <div>
+                  <p>Owned by</p>
+                  <p>1</p>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <p>Floor price</p>
+                  <p>0.70 ETH</p>
+                </div>
+                <div>
+                  <p>Total Sales</p>
+                  <p>4 ETH</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Popup
+                trigger={
+                  <Button variant='light'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='24'
+                      height='24'
+                      viewBox='0 0 24 24'
+                      fill='none'
+                      stroke='currentColor'
+                      strokeWidth='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                    >
+                      <circle cx='12' cy='12' r='1' />
+                      <circle cx='19' cy='12' r='1' />
+                      <circle cx='5' cy='12' r='1' />
+                    </svg>
+                  </Button>
+                }
+                position='bottom right'
+                closeOnDocumentClick
+                arrow={false}
+              >
+                <Button
+                  style={{
+                    color: 'red',
+                    fontSize: '16px',
+                    padding: '10px',
+                    fontWeight: '600',
+                    marginTop: '10px',
+                    borderRadius: '8px',
+                    boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)'
+                  }}
+                  variant='light'
+                >
+                  🚫 Report
+                </Button>
+              </Popup>
+              <Button variant='light'>
+                <div>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  >
+                    <path d='M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8' />
+                    <polyline points='16 6 12 2 8 6' />
+                    <line x1='12' y1='2' x2='12' y2='15' />
+                  </svg>
+                  <p>Share</p>
+                </div>
+              </Button>
+            </div>
+          </div>
+          <div className='singleCollection__bottomBottom'>
+            <div className='singleCollection__bottomBottomTab'>
+              <p
+                onClick={() => setSelectedTab('nfts')}
+                style={{
+                  borderBottom: `${
+                    selectedTab === 'nfts' ? '2px solid black' : ''
+                  }`
+                }}
+              >
+                NFTs
+              </p>
+              <p
+                onClick={() => setSelectedTab('description')}
+                style={{
+                  borderBottom: `${
+                    selectedTab === 'description' ? '2px solid black' : ''
+                  }`
+                }}
+              >
+                Description
+              </p>
+              <p
+                onClick={() => setSelectedTab('activity')}
+                style={{
+                  borderBottom: `${
+                    selectedTab === 'activity' ? '2px solid black' : ''
+                  }`
+                }}
+              >
+                Activity
+              </p>
+            </div>
+            {selectedTab === 'nfts' && (
+              <select name='' id=''>
+                <option value=''>Date Minted - Newest</option>
+                <option value=''>Date Minted - Oldest</option>
+                <option value=''>Price - Highest</option>
+                <option value=''>Price - Lowest</option>
+              </select>
+            )}
+
+            <div className='singleCollection__bottomBottomInfo'>
+              {selectedTab === 'nfts' && (
+                <Row xs={1} sm={2} md={3} xxl={4} className='g-4'>
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
+                    <NFTCard key={item} isLive={false} />
+                  ))}
+                </Row>
+              )}
+
+              {selectedTab === 'description' && (
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea
+                  necessitatibus excepturi ipsa odio mollitia laudantium
+                  expedita officia accusantium, nihil ipsum facere, ratione
+                  explicabo culpa voluptas, sunt cupiditate. Cumque cum ducimus
+                  ipsa magnam suscipit magni accusantium distinctio expedita
+                  debitis itaque, alias at aut officia, unde provident
+                  exercitationem ipsam, dolorem eum labore?
+                </p>
+              )}
             </div>
           </div>
         </div>
-        <Container fluid className='collection__overview'>
-          <Row
-            xs={2}
-            sm={2}
-            md={2}
-            xl={4}
-            className='collection__overview__left'
-          >
-            <div className=''>
-              <p>Collection of</p>
-              <h2>9</h2>
-            </div>
-            <div>
-              <p>Owned by</p>
-              <div className='owned__by'>
-                <h2>1</h2>
-                <img
-                  src='https://f8n-production.imgix.net/creators/profile/baqfv8nrd-aye-gif-3ripzh.gif?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
-                  alt=''
-                />
-              </div>
-            </div>
-            <div className=''>
-              <p>Floor Price</p>
-              <h2>0.70 ETH</h2>
-            </div>
-            <div className=''>
-              <p>Total Sales</p>
-              <h2> - </h2>
-            </div>
-          </Row>
-          <div className='collection__overview__right'>
-            <div className=''>
-              <HiDotsHorizontal className='threeDot__icon' />
-            </div>
-            <div className=''>
-              <BsDownload className='share__icon' />
-              <p>Share</p>
-            </div>
-          </div>
-        </Container>
-      </Container>
-      <section className='bottom__content'>
-        <Container fluid>
-          <NavigationTab />
-
-          <div className='sorting__dropdown'>
-            <select>
-              <option>Date Minted - Newest</option>
-              <option>Date Minted - Oldest Reminds</option>
-              <option>Price - Highest</option>
-              <option>Price - Lowest</option>
-            </select>
-          </div>
-          <Row xs={1} sm={2} md={3} xxl={4}>
-            {data.map((img, i) => (
-              <NFTCard key={i} image={img} />
-            ))}
-          </Row>
-        </Container>
-      </section>
-      <SingleCollectionFooter />
-    </section>
+      </div>
+    </>
   );
 };
 
-export default index;
+export default SingleCollection;

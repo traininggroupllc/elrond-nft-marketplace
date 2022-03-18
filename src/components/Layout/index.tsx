@@ -16,7 +16,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       window.location.pathname === '/bid' ||
       window.location.pathname === '/single_collection' ||
       window.location.pathname === '/user_profile' ? (
-        <> {window.location.pathname === '/user_profile' ? '' : <Navbar />}</>
+        <>
+          {' '}
+          {window.location.pathname === '/user_profile' ||
+          window.location.pathname === '/single_collection' ? (
+            ''
+          ) : (
+            <Navbar />
+          )}
+        </>
       ) : (
         <div>
           <Navbar />
@@ -33,10 +41,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </main>
       {window.location.pathname === '/nft_details' ||
       window.location.pathname === '/bid' ||
-      window.location.pathname === '/user_profile' ? (
+      window.location.pathname === '/user_profile' ||
+      window.location.pathname === '/single_collection' ? (
         <SecondaryFooter />
-      ) : // <Footer />
-      null}
+      ) : (
+        <Footer />
+      )}
     </div>
   );
 };

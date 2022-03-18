@@ -5,9 +5,10 @@ import NFTImg1 from '../../assets/img/nft-img/nft-crypto.gif';
 
 interface Props {
   isSold?: boolean;
+  isLive?: boolean;
 }
 
-const NFTCard = ({ isSold = true }: Props) => {
+const NFTCard = ({ isSold = true, isLive = true }: Props) => {
   return (
     <Col md='6' lg='4'>
       <Link to='/nft_details'>
@@ -28,21 +29,23 @@ const NFTCard = ({ isSold = true }: Props) => {
             <p className='mt-3 mb-0 current__bid__title'>Current Bid</p>
             <div className='live__show mb-3'>
               <p>0.40 ETH</p>
-              <div>
-                <Spinner
-                  animation='grow'
-                  size='sm'
-                  variant='light'
-                  className='NFTCard__detailsBidSpinner'
-                />
-                <p>LIVE</p>
-                <p>11h</p>
-              </div>
+              {isLive && (
+                <div>
+                  <Spinner
+                    animation='grow'
+                    size='sm'
+                    variant='light'
+                    className='NFTCard__detailsBidSpinner'
+                  />
+                  <p>LIVE</p>
+                  <p>11h</p>
+                </div>
+              )}
             </div>
             <Link to='/bid'>
               {isSold ? (
                 <Button variant='dark' className='card__btn'>
-                  Place Bid
+                  {isLive ? 'Place Bid' : 'Buy now'}
                 </Button>
               ) : (
                 <Button variant='light' className='card__btnSold'>

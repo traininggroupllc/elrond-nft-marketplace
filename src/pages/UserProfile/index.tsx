@@ -6,6 +6,7 @@ import NFTCard from 'components/common/NFTCard';
 import UserPopover from 'components/common/UserPopover';
 import UserProfileModal from 'components/common/UserProfileModal';
 import SingleCollectionNav from 'components/Layout/SingleCollectionNav';
+import { Link } from 'react-router-dom';
 
 const UserProfile = () => {
   const [collectionOrCreated, setCollectionOrCreated] = useState('collection');
@@ -192,7 +193,7 @@ const UserProfile = () => {
               {collectionOrCreated === 'created' && (
                 <Row xs={1} sm={2} md={1} lg={2} xxl={3} className='g-4'>
                   {[1, 2, 3, 4, 5].map((item) => (
-                    <NFTCard key={item} />
+                    <NFTCard isLive={false} key={item} />
                   ))}
                 </Row>
               )}
@@ -237,13 +238,15 @@ const UserProfile = () => {
             <p>
               <span>ENS</span>orangesekaii.eth
             </p>
-            <p>
-              Invited by @seerlight{' '}
-              <img
-                src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
-                alt=''
-              />
-            </p>
+            <Link to='/user_profile'>
+              <p>
+                Invited by @seerlight{' '}
+                <img
+                  src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
+                  alt=''
+                />
+              </p>
+            </Link>
           </div>
           <div className='userProfile__bottomLinks'>
             <h3>Links</h3>
