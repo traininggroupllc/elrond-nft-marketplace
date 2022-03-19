@@ -15,7 +15,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       window.location.pathname === '/nft_details' ||
       window.location.pathname === '/bid' ||
       window.location.pathname === '/single_collection' ||
-      window.location.pathname === '/user_profile' ? (
+      window.location.pathname === '/user_profile' ||
+      window.location.pathname === '/balance' ? (
         <>
           {' '}
           {window.location.pathname === '/user_profile' ||
@@ -42,7 +43,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       {window.location.pathname === '/nft_details' ||
       window.location.pathname === '/bid' ||
       window.location.pathname === '/user_profile' ||
-      window.location.pathname === '/single_collection' ? (
+      window.location.pathname === '/single_collection' ||
+      window.location.pathname === '/balance' ? (
         <SecondaryFooter />
       ) : (
         <Footer />

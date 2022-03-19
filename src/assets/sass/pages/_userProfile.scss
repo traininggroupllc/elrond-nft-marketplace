@@ -42,9 +42,10 @@
     }
   }
 
-  p:nth-child(2) {
+  p:nth-last-child(2) {
     font-size: $lgFont;
     text-align: $textAlign;
+    width: 100%;
     font-weight: 600;
     margin-top: 10px;
   }
@@ -53,6 +54,7 @@
     font-size: $mdFont;
     font-weight: 600;
     text-align: $textAlign;
+    width: 100%;
     background: linear-gradient(
       to right,
       #02d602 10%,

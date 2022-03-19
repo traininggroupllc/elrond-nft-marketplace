@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Button, Row } from 'react-bootstrap';
+import { Button, Row, Table } from 'react-bootstrap';
 import { RiShareBoxFill } from 'react-icons/ri';
 import Popup from 'reactjs-popup';
-import SingleCollectionNav from 'components/Layout/SingleCollectionNav';
 import NFTCard from 'components/common/NFTCard';
 import UserPopover from 'components/common/UserPopover';
+import SingleCollectionNav from 'components/Layout/SingleCollectionNav';
+import { Link } from 'react-router-dom';
 
 const SingleCollection = () => {
   const [selectedTab, setSelectedTab] = useState('nfts');
@@ -155,7 +156,6 @@ const SingleCollection = () => {
                 <option value=''>Price - Lowest</option>
               </select>
             )}
-
             <div className='singleCollection__bottomBottomInfo'>
               {selectedTab === 'nfts' && (
                 <Row xs={1} sm={2} md={3} xxl={4} className='g-4'>
@@ -164,7 +164,6 @@ const SingleCollection = () => {
                   ))}
                 </Row>
               )}
-
               {selectedTab === 'description' && (
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea
@@ -175,6 +174,71 @@ const SingleCollection = () => {
                   debitis itaque, alias at aut officia, unde provident
                   exercitationem ipsam, dolorem eum labore?
                 </p>
+              )}
+              {selectedTab === 'activity' && (
+                <>
+                  <h4>Sales history</h4>
+                  <Table borderless>
+                    <thead>
+                      <tr>
+                        <th>Artwork</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[1, 2, 3].map((item) => (
+                        <tr key={item}>
+                          <td>
+                            <Link
+                              to='/nft_details'
+                              style={{ textDecoration: 'none', color: 'black' }}
+                            >
+                              <img
+                                src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
+                                alt=''
+                              />
+                              <p>In.Visible</p>
+                            </Link>
+                          </td>
+                          <td>
+                            <UserPopover />
+                          </td>
+                          <td>
+                            <UserPopover />
+                          </td>
+                          <td>
+                            <Link
+                              to='/nft_details'
+                              style={{ textDecoration: 'none', color: 'black' }}
+                            >
+                              <p>Buy Now</p>
+                            </Link>
+                          </td>
+                          <td>
+                            <Link
+                              to='/nft_details'
+                              style={{ textDecoration: 'none', color: 'black' }}
+                            >
+                              <p>0.1 ETH</p>
+                            </Link>
+                          </td>
+                          <td>
+                            <Link
+                              to='/nft_details'
+                              style={{ textDecoration: 'none', color: 'black' }}
+                            >
+                              <p>12 days ago</p>
+                            </Link>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                </>
               )}
             </div>
           </div>

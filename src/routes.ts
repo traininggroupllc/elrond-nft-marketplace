@@ -1,4 +1,5 @@
 import { dAppName } from 'config';
+import Balance from 'pages/Balance';
 import Bid from 'pages/Bid';
 import Collections from 'pages/Collections';
 import NFTDetails from 'pages/NFTDetails';
@@ -24,7 +25,8 @@ export const routeNames = {
   nftDetails: '/nft_details',
   bid: '/bid',
   singleCollection: '/single_collection',
-  userProfile: '/user_profile'
+  userProfile: '/user_profile',
+  balance: '/balance'
 };
 
 const routes: Array<any> = [
@@ -78,6 +80,11 @@ const routes: Array<any> = [
     path: routeNames.userProfile,
     title: 'User Profile',
     component: UserProfile
+  },
+  {
+    path: routeNames.balance,
+    title: 'Balance',
+    component: Balance
   }
 ];
 
