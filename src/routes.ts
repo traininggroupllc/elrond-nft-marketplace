@@ -4,7 +4,9 @@ import Bid from 'pages/Bid';
 import Collections from 'pages/Collections';
 import NFTDetails from 'pages/NFTDetails';
 import NFTs from 'pages/NFTs';
+import Profile from 'pages/Profile';
 import Profiles from 'pages/Profiles';
+import Settings from 'pages/Settings/index';
 import UserProfile from 'pages/UserProfile';
 import withPageTitle from './components/PageTitle';
 import Dashboard from './pages/Dashboard';
@@ -26,7 +28,9 @@ export const routeNames = {
   bid: '/bid',
   singleCollection: '/single_collection',
   userProfile: '/user_profile',
-  balance: '/balance'
+  balance: '/balance',
+  settings: '/settings',
+  profile: '/profile'
 };
 
 const routes: Array<any> = [
@@ -85,6 +89,16 @@ const routes: Array<any> = [
     path: routeNames.balance,
     title: 'Balance',
     component: Balance
+  },
+  {
+    path: routeNames.settings,
+    title: 'Settings',
+    component: Settings
+  },
+  {
+    path: routeNames.profile,
+    title: 'Profile',
+    component: Profile
   }
 ];
 

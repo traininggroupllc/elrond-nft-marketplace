@@ -1,0 +1,72 @@
+.settings__container {
+  max-width: 650px;
+  margin: 2rem 0;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: $box-shadow;
+  transition: width 0.3s ease;
+
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+
+  .settings {
+    .settings__email--form {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      & > div {
+        width: 50%;
+
+        .form-control:focus {
+          border-color: $dark;
+          box-shadow: $input-box-shadow;
+        }
+
+        @media (max-width: 412px) {
+          width: 100%;
+        }
+      }
+    }
+
+    & > hr {
+      margin: 2rem 0;
+    }
+
+    .settings__email--notifications {
+      .settings__email--notifications__item {
+        display: flex;
+        gap: 0.68rem;
+        box-shadow: $box-shadow;
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 10px;
+
+        .form-check-input {
+          margin-right: 10px;
+          width: 2em;
+          height: 2em;
+          margin-top: 0.3em;
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+        .form-check-input:checked {
+          background-color: $dark;
+          border-color: $dark;
+        }
+      }
+
+      & > button {
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 8px;
+        border-radius: 8px;
+      }
+    }
+  }
+}

@@ -3,7 +3,10 @@ import { logout, useGetAccountInfo } from '@elrondnetwork/dapp-core';
 import { Navbar as BsNavbar, NavItem, Nav, Button } from 'react-bootstrap';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import UserNavPopover from 'components/common/UserNavPopover';
 import { routeNames } from 'routes';
+import PowerIcon from '../../../assets/icons/power.png';
+import UserLogo from '../../../assets/img/user.jpg';
 import { ReactComponent as ElrondLogo } from './../../../assets/img/elrond.svg';
 
 const Navbar = () => {
@@ -81,9 +84,32 @@ const Navbar = () => {
                 <h4>Blog</h4>
               </Link>
             </NavItem>
-            <NavItem className='navBar__navItem'>
-              <Button variant='dark'>Connect wallet</Button>
-            </NavItem>
+            {/* after connect wallet wallet */}
+            {true && (
+              <NavItem className='navBar__navItem'>
+                <div className='navBar__navItem--setting'>
+                  <img src={PowerIcon} alt='user' />
+                </div>
+              </NavItem>
+            )}
+            {true && (
+              <NavItem className='navBar__navItem'>
+                <div className='navBar__navItem--userImg'>
+                  <img src={UserLogo} alt='user' />
+                  {/* <UserNavPopover position='bottom right' /> */}
+                </div>
+              </NavItem>
+            )}
+            {true ? (
+              <NavItem className='navBar__navItem'>
+                <Button variant='dark'>Create</Button>
+              </NavItem>
+            ) : (
+              <NavItem className='navBar__navItem'>
+                <Button variant='dark'>Connect wallet</Button>
+              </NavItem>
+            )}
+
             <NavItem className='navBar__button'>
               <Button
                 variant='light'
