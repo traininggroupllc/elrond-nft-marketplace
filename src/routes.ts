@@ -126,7 +126,7 @@ const routes: Array<any> = [
   },
   {
     path: routeNames.notification,
-    title: 'Activity',
+    title: 'Notification',
     component: Settings
   },
   {
