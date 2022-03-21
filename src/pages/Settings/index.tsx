@@ -5,25 +5,32 @@ const Settings = () => {
   return (
     <div className='container-lg'>
       <div className='d-flex justify-content-center align-items-center flex-column'>
-        <h1 className='text-dark fw-bold my-5'>Settings</h1>
+        <h1 className='text-dark fw-bold my-5'>
+          {window.location.pathname === '/settings'
+            ? 'Settings'
+            : 'Notification'}
+        </h1>
 
         {/* settings container*/}
         <div className='settings__container'>
           <div className='settings'>
-            <div className='settings__email--form'>
-              <label className='text-dark fs-5 fw-bold'>
-                Your email address
-              </label>
-              <div>
-                <input
-                  type='email'
-                  className='form-control'
-                  placeholder='Email'
-                />
-              </div>
-            </div>
-
-            <hr />
+            {window.location.pathname === '/settings' && (
+              <>
+                <div className='settings__email--form'>
+                  <label className='text-dark fs-5 fw-bold'>
+                    Your email address
+                  </label>
+                  <div>
+                    <input
+                      type='email'
+                      className='form-control'
+                      placeholder='Email'
+                    />
+                  </div>
+                </div>
+                <hr />
+              </>
+            )}
 
             <div className='settings__email--notifications'>
               <p className='text-dark fs-5 fw-bold'>Email notifications</p>

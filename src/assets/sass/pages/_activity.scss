@@ -1,0 +1,48 @@
+.activity {
+  padding: 0 25px;
+
+  h1 {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    color: $dark;
+  }
+
+  div {
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    box-shadow: $box-shadow;
+    border-radius: 10px;
+    padding: 20px 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+    h4 {
+      text-align: center;
+      color: $dark;
+    }
+
+    p {
+      text-align: center;
+      color: $secondary;
+      font-size: 14px;
+      margin-top: 20px;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) {
+  .activity {
+    div {
+      padding: 40px 10px;
+
+      h4 {
+        font-size: 24px;
+      }
+    }
+  }
+}

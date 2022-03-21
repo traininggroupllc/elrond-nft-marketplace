@@ -12,7 +12,8 @@ const SecondaryFooter = () => {
         (window.location.pathname === '/bid' ||
           window.location.pathname === '/user_profile' ||
           window.location.pathname === '/single_collection' ||
-          window.location.pathname === '/balance') &&
+          window.location.pathname === '/balance' ||
+          window.location.pathname === '/activity') &&
         'secondaryFooter__bid'
       }`}
     >
