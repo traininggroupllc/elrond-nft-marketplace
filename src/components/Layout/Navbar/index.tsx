@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
-import { logout, useGetAccountInfo } from '@elrondnetwork/dapp-core';
+import { useGetAccountInfo } from '@elrondnetwork/dapp-core';
 import { Navbar as BsNavbar, NavItem, Nav, Button } from 'react-bootstrap';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import UserNavPopover from 'components/common/UserNavPopover';
+import ProfilePopover from 'components/common/ProfilePopover';
 import { routeNames } from 'routes';
 import PowerIcon from '../../../assets/icons/power.png';
-import UserLogo from '../../../assets/img/user.jpg';
 import { ReactComponent as ElrondLogo } from './../../../assets/img/elrond.svg';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [walletConnected, setWalletConnected] = useState(false);
   const { address } = useGetAccountInfo();
 
   // const handleLogout = () => {
   //   logout(`${window.location.origin}/unlock`);
   // };
+
+  const handelWalletConnect = () => {
+    setWalletConnected(!walletConnected);
+  };
 
   const isLoggedIn = Boolean(address);
 
@@ -70,43 +74,59 @@ const Navbar = () => {
               </div>
             </NavItem>
             <NavItem className='navBar__navItem'>
-              <Link to={'/explore'}>
-                <h4>Explore</h4>
-              </Link>
+              <ProfilePopover handelWalletConnect={handelWalletConnect} />
             </NavItem>
             <NavItem className='navBar__navItem'>
-              <Link to={'/about'}>
-                <h4>About</h4>
-              </Link>
+              {walletConnected ? (
+                <Link to={'/feed'}>
+                  <h4>Feed</h4>
+                </Link>
+              ) : (
+                <Link to={'/about'}>
+                  <h4>About</h4>
+                </Link>
+              )}
             </NavItem>
             <NavItem className='navBar__navItem'>
-              <Link to={'/blog'}>
-                <h4>Blog</h4>
-              </Link>
+              {walletConnected ? (
+                <Link to={'/activity'}>
+                  <h4>Activity</h4>
+                </Link>
+              ) : (
+                <Link to={'/blog'}>
+                  <h4>Blog</h4>
+                </Link>
+              )}
             </NavItem>
             {/* after connect wallet wallet */}
-            {true && (
+            {walletConnected && (
               <NavItem className='navBar__navItem'>
-                <div className='navBar__navItem--setting'>
-                  <img src={PowerIcon} alt='user' />
-                </div>
+                <Link to='/notification'>
+                  <div className='navBar__navItem--setting'>
+                    <img src={PowerIcon} alt='user' />
+                  </div>
+                </Link>
               </NavItem>
             )}
-            {true && (
+            {walletConnected && (
               <NavItem className='navBar__navItem'>
                 <div className='navBar__navItem--userImg'>
-                  <img src={UserLogo} alt='user' />
-                  {/* <UserNavPopover position='bottom right' /> */}
+                  <ProfilePopover
+                    isProfile={true}
+                    handelWalletConnect={handelWalletConnect}
+                  />
                 </div>
               </NavItem>
             )}
-            {true ? (
+            {walletConnected ? (
               <NavItem className='navBar__navItem'>
                 <Button variant='dark'>Create</Button>
               </NavItem>
             ) : (
               <NavItem className='navBar__navItem'>
-                <Button variant='dark'>Connect wallet</Button>
+                <Button onClick={handelWalletConnect} variant='dark'>
+                  Connect wallet
+                </Button>
               </NavItem>
             )}
 
@@ -171,6 +191,7 @@ const Navbar = () => {
       {menuOpen && (
         <div className='navBar__menu'>
           <section>
+            {walletConnected && <h3>Feed</h3>}
             <h3>Browse</h3>
             <h3>Blog</h3>
             <h3>About</h3>

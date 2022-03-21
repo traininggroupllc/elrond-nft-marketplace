@@ -3,16 +3,23 @@ import { useGetAccountInfo } from '@elrondnetwork/dapp-core';
 import { Navbar as BsNavbar, NavItem, Nav, Button } from 'react-bootstrap';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import ProfilePopover from 'components/common/ProfilePopover';
 import { routeNames } from 'routes';
+import PowerIcon from '../../../assets/icons/power.png';
 import { ReactComponent as ElrondLogo } from '../../../assets/img/elrond.svg';
 
 const SingleCollectionNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [focus, setFocus] = useState(false);
+  const [walletConnected, setWalletConnected] = useState(false);
   const { address } = useGetAccountInfo();
 
   const isLoggedIn = Boolean(address);
+
+  const handelWalletConnect = () => {
+    setWalletConnected(!walletConnected);
+  };
 
   return (
     <BsNavbar className='collection_nav flex-column px-4'>
@@ -79,23 +86,61 @@ const SingleCollectionNav = () => {
               </div>
             </NavItem>
             <NavItem className='collection_navBar__navItem'>
-              <Link to={'/explore'}>
-                <h4>Explore</h4>
-              </Link>
+              <ProfilePopover handelWalletConnect={handelWalletConnect} />
             </NavItem>
             <NavItem className='collection_navBar__navItem'>
-              <Link to={'/about'}>
-                <h4>About</h4>
-              </Link>
+              {walletConnected ? (
+                <Link to={'/feed'}>
+                  <h4>Feed</h4>
+                </Link>
+              ) : (
+                <Link to={'/about'}>
+                  <h4>About</h4>
+                </Link>
+              )}
             </NavItem>
             <NavItem className='collection_navBar__navItem'>
-              <Link to={'/blog'}>
-                <h4>Blog</h4>
-              </Link>
+              {walletConnected ? (
+                <Link to={'/activity'}>
+                  <h4>Activity</h4>
+                </Link>
+              ) : (
+                <Link to={'/blog'}>
+                  <h4>Blog</h4>
+                </Link>
+              )}
             </NavItem>
-            <NavItem className='collection_navBar__navItem'>
-              <Button variant='dark'>Connect wallet</Button>
-            </NavItem>
+            {/* after connect wallet wallet */}
+            {walletConnected && (
+              <NavItem className='collection_navBar__navItem'>
+                <Link to='/notification'>
+                  <div className='collection_navBar__navItem--setting'>
+                    <img src={PowerIcon} alt='user' />
+                  </div>
+                </Link>
+              </NavItem>
+            )}
+            {walletConnected && (
+              <NavItem className='collection_navBar__navItem'>
+                <div className='collection_navBar__navItem--userImg'>
+                  <ProfilePopover
+                    isProfile={true}
+                    handelWalletConnect={handelWalletConnect}
+                  />
+                </div>
+              </NavItem>
+            )}
+            {walletConnected ? (
+              <NavItem className='collection_navBar__navItem'>
+                <Button variant='dark'>Create</Button>
+              </NavItem>
+            ) : (
+              <NavItem className='collection_navBar__navItem'>
+                <Button onClick={handelWalletConnect} variant='dark'>
+                  Connect wallet
+                </Button>
+              </NavItem>
+            )}
             <NavItem className='collection_navBar__button'>
               <Button
                 variant='light'
@@ -157,6 +202,7 @@ const SingleCollectionNav = () => {
       {menuOpen && (
         <div className='collection_navBar__menu'>
           <section>
+            {walletConnected && <h3>Feed</h3>}
             <h3>Browse</h3>
             <h3>Blog</h3>
             <h3>About</h3>

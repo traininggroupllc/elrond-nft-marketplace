@@ -18,7 +18,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       window.location.pathname === '/user_profile' ||
       window.location.pathname === '/balance' ||
       window.location.pathname === '/profile' ||
-      window.location.pathname === '/settings' ? (
+      window.location.pathname === '/settings' ||
+      window.location.pathname === '/activity' ||
+      window.location.pathname === '/notification' ||
+      window.location.pathname === '/feed' ? (
         <>
           {' '}
           {window.location.pathname === '/user_profile' ||
@@ -46,7 +49,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       window.location.pathname === '/bid' ||
       window.location.pathname === '/user_profile' ||
       window.location.pathname === '/single_collection' ||
-      window.location.pathname === '/balance' ? (
+      window.location.pathname === '/balance' ||
+      window.location.pathname === '/activity' ? (
         <SecondaryFooter />
       ) : (
         <Footer />
