@@ -1,6 +1,8 @@
 import { dAppName } from 'config';
+import About from 'pages/About';
 import Balance from 'pages/Balance';
 import Bid from 'pages/Bid';
+import Blog from 'pages/Blog';
 import Collections from 'pages/Collections';
 import NFTDetails from 'pages/NFTDetails';
 import NFTs from 'pages/NFTs';
@@ -30,7 +32,9 @@ export const routeNames = {
   userProfile: '/user_profile',
   balance: '/balance',
   settings: '/settings',
-  profile: '/profile'
+  profile: '/profile',
+  blog: '/blog',
+  about: '/about'
 };
 
 const routes: Array<any> = [
@@ -99,6 +103,16 @@ const routes: Array<any> = [
     path: routeNames.profile,
     title: 'Profile',
     component: Profile
+  },
+  {
+    path: routeNames.blog,
+    title: 'Blog',
+    component: Blog
+  },
+  {
+    path: routeNames.about,
+    title: 'About',
+    component: About
   }
 ];
 

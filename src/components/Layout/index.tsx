@@ -18,6 +18,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       window.location.pathname === '/user_profile' ||
       window.location.pathname === '/balance' ||
       window.location.pathname === '/profile' ||
+      window.location.pathname === '/blog' ||
+      window.location.pathname === '/about' ||
       window.location.pathname === '/settings' ? (
         <>
           {' '}

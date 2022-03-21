@@ -1,0 +1,20 @@
+.about__foundation--marquee {
+  margin: 3rem 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5rem;
+  color: #9b9bff;
+
+  @media (min-width: 768px) {
+    font-size: 8rem;
+  }
+}
+
+.make__history--eth__title {
+  font-size: 3.375rem;
+
+  @media (min-width: 576px) {
+    font-size: 5.375rem;
+  }
+}
