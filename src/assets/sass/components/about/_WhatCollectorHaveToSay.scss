@@ -1,0 +1,69 @@
+.what__collector--have__to--say__card {
+  border: none;
+  box-shadow: $box-shadow;
+  border-radius: 10px;
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 32px;
+    position: relative;
+
+    .card-text {
+      @media (min-width: 768px) {
+        margin-left: 48px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  .what__collector--have__to--say__card--rotate__text {
+    display: inline;
+    z-index: 1;
+
+    @media (min-width: 768px) {
+      transform: translateX(-100%) rotate(-90deg);
+      transform-origin: right top;
+      display: inline;
+      width: fit-content;
+      z-index: 1;
+    }
+  }
+
+  .what__collector--have__to--say__card--user {
+    align-self: flex-end;
+    border-radius: 30px;
+
+    .what__collector--have__to--say__card--user__img {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: $box-shadow;
+      padding: 5px 10px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        box-shadow: $box-shadow-medium;
+        transform: translateY(-5px);
+      }
+
+      & > img {
+        height: 35px;
+        width: 35px;
+        display: block;
+        border-radius: 50%;
+      }
+
+      & > p {
+        margin: 0;
+        font-weight: bold;
+        color: $dark;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

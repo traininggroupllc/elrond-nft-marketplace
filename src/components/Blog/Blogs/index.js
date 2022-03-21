@@ -1,21 +1,11 @@
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { routeNames } from 'routes';
 
 const Blogs = () => {
   return (
-    <div className='featuredNft'>
-      <div className='featuredNft__top'>
-        <div>
-          <h2>Blog</h2>
-        </div>
-        <Link to={routeNames.blog} className='link'>
-          <p>View all articles</p>
-        </Link>
-      </div>
+    <div className='mb-5'>
       <Row xs={1} sm={2} md={3} className='g-4'>
-        {Array.from({ length: 3 }).map((_, idx) => (
+        {Array.from({ length: 8 }).map((_, idx) => (
           <Col key={idx}>
             <Card className='blog__card'>
               <Card.Img
