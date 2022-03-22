@@ -154,40 +154,42 @@ const ProfilePopover = ({
                   />
                 </p>
               </div>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  paddingTop: '10px'
-                }}
-              >
-                <div>
-                  <p
-                    style={{
-                      margin: '0',
-                      fontSize: '14px',
-                      color: '#666666',
-                      fontWeight: '600'
-                    }}
-                  >
-                    Offer Balance
-                  </p>
-                  <input
-                    style={{
-                      width: '100px',
-                      border: 'none',
-                      outline: 'none',
-                      backgroundColor: 'lightgray',
-                      borderRadius: '4px',
-                      height: '30px',
-                      marginTop: '5px'
-                    }}
-                    type='text'
-                  />
+              <Link to='/balance'>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    paddingTop: '10px'
+                  }}
+                >
+                  <div>
+                    <p
+                      style={{
+                        margin: '0',
+                        fontSize: '14px',
+                        color: '#666666',
+                        fontWeight: '600'
+                      }}
+                    >
+                      Offer Balance
+                    </p>
+                    <input
+                      style={{
+                        width: '100px',
+                        border: 'none',
+                        outline: 'none',
+                        backgroundColor: 'lightgray',
+                        borderRadius: '4px',
+                        height: '30px',
+                        marginTop: '5px'
+                      }}
+                      type='text'
+                    />
+                  </div>
+                  {rightArrow}
                 </div>
-                {rightArrow}
-              </div>
+              </Link>
             </div>
             <Link to='/settings' style={{ color: 'black' }}>
               <div

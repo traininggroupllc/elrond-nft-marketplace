@@ -9,7 +9,7 @@ interface Props {
 const index = ({ isCollection }: Props) => {
   return (
     <Col>
-      <Link to='/single_collection'>
+      <Link style={{ outline: 'none' }} to='/single_collection'>
         <div className='featuredCard'>
           <div className='card__content'>
             <div className='featuredCard__top'>

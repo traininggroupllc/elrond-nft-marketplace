@@ -37,7 +37,12 @@ const Hero = () => {
               on={['hover', 'focus']}
               arrow={false}
             >
-              <div style={{ width: '350px', marginTop: '10px' }}>
+              <div
+                style={{
+                  width: '350px',
+                  marginTop: '10px'
+                }}
+              >
                 <Featured isCollection={true} />
               </div>
             </Popup>
