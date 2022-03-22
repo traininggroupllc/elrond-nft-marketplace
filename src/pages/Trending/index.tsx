@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
+import Popup from 'reactjs-popup';
+import UserPopover from 'components/common/UserPopover';
+import Featured from '../../components/Card/FeaturedCard';
+import { Link } from 'react-router-dom';
 
 const Trending = () => {
   const [duration, setDuration] = useState('1d');
@@ -111,8 +115,12 @@ const Trending = () => {
                 <>
                   <th className='trending__deskTh'>Unique Collectors</th>
                   <th className='trending__deskTh'>NFTs Sold</th>
-                  <th className='trending__deskTh'>Primary Sales</th>
-                  <th className='trending__deskTh'>Secondary Sales</th>
+                  <th className='trending__deskTh trending__deskThRight'>
+                    Primary Sales
+                  </th>
+                  <th className='trending__deskTh trending__deskThRight'>
+                    Secondary Sales
+                  </th>
                 </>
               )}
               {selectedTab === 'collectors' && (
@@ -125,28 +133,173 @@ const Trending = () => {
                 <>
                   <th className='trending__deskTh'>Owners</th>
                   <th className='trending__deskTh'>NFTs Sold</th>
-                  <th className='trending__deskTh'>Primary Sales</th>
-                  <th className='trending__deskTh'>Secondary Sales</th>
+                  <th className='trending__deskTh trending__deskThRight'>
+                    Primary Sales
+                  </th>
+                  <th className='trending__deskTh trending__deskThRight'>
+                    Secondary Sales
+                  </th>
                 </>
               )}
               <th className='trending__deskTh trending__deskThDark'>
                 Total Sales
               </th>
               <th className='trending__mobileTh'>
-                <select name='' id=''>
-                  <option value=''>Owners</option>
-                  <option value=''>NFTs Sold</option>
-                  <option value=''>Primary Sales</option>
-                  <option value=''>Secondary Sales</option>
-                  <option value=''>Total Volume</option>
-                </select>
+                {(selectedTab === 'creators' ||
+                  selectedTab === 'collections') && (
+                  <select name='' id=''>
+                    <option value=''>Owners</option>
+                    <option value=''>NFTs Sold</option>
+                    <option value=''>Primary Sales</option>
+                    <option value=''>Secondary Sales</option>
+                    <option value=''>Total Volume</option>
+                  </select>
+                )}
+                {selectedTab === 'collectors' && (
+                  <select name='' id=''>
+                    <option value=''>Creators Supported</option>
+                    <option value=''>NFTs Bought</option>
+                    <option value=''>Total Spent</option>
+                  </select>
+                )}
               </th>
             </tr>
           </thead>
+          <br />
+          <br />
           <tbody>
-            <tr>
-              <td></td>
-            </tr>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+              <>
+                <tr key={item}>
+                  <td>
+                    <Link
+                      to={
+                        selectedTab === 'collections'
+                          ? '/single_collection'
+                          : '/user_profile'
+                      }
+                    >
+                      <p>#1</p>
+                      <div>
+                        {selectedTab === 'collections' ? (
+                          <Popup
+                            trigger={
+                              <Link to='/single_collection'>
+                                <img
+                                  className='trending__collectionImg'
+                                  src='https://f8n-production.imgix.net/collections/v0451l09m-000053.JPG?q=50&w=28&h=28&auto=format%2Ccompress&fit=crop&dpr=2'
+                                  alt='collection'
+                                />
+                              </Link>
+                            }
+                            position='bottom left'
+                            on={['hover', 'focus']}
+                            arrow={false}
+                          >
+                            <div
+                              style={{
+                                width: '350px',
+                                marginTop: '10px',
+                                outline: 'none'
+                              }}
+                            >
+                              <Featured isCollection={true} />
+                            </div>
+                          </Popup>
+                        ) : (
+                          <UserPopover
+                            position='bottom left'
+                            imageOnly={true}
+                          />
+                        )}
+                        <div>
+                          <p>Basqkek</p>
+                          <p>@Basqkek</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </td>
+                  {(selectedTab === 'creators' ||
+                    selectedTab === 'collections') && (
+                    <>
+                      <td className='trending__deskTd'>
+                        <Link
+                          to={
+                            selectedTab === 'collections'
+                              ? '/single_collection'
+                              : '/user_profile'
+                          }
+                        >
+                          <p>1</p>
+                        </Link>
+                      </td>
+                      <td className='trending__deskTd'>
+                        <Link
+                          to={
+                            selectedTab === 'collections'
+                              ? '/single_collection'
+                              : '/user_profile'
+                          }
+                        >
+                          <p>1</p>
+                        </Link>
+                      </td>
+                      <td className='trending__deskTd trending__deskTdRight'>
+                        <Link
+                          to={
+                            selectedTab === 'collections'
+                              ? '/single_collection'
+                              : '/user_profile'
+                          }
+                        >
+                          <p>2.10 ETH</p>
+                          <p>$6347.59</p>
+                        </Link>
+                      </td>
+                      <td className='trending__deskTd trending__deskTdRight'>
+                        <Link
+                          to={
+                            selectedTab === 'collections'
+                              ? '/single_collection'
+                              : '/user_profile'
+                          }
+                        >
+                          <p>0 ETH</p>
+                          <p>$0.00</p>
+                        </Link>
+                      </td>
+                    </>
+                  )}
+                  {selectedTab === 'collectors' && (
+                    <>
+                      <td className='trending__deskTd'>
+                        <Link to='/user_profile'>
+                          <p>5</p>
+                        </Link>
+                      </td>
+                      <td className='trending__deskTd'>
+                        <Link to='/user_profile'>
+                          <p>5</p>
+                        </Link>
+                      </td>
+                    </>
+                  )}
+                  <td>
+                    <Link
+                      to={
+                        selectedTab === 'collections'
+                          ? '/single_collection'
+                          : '/user_profile'
+                      }
+                    >
+                      <p>2.10 ETH</p>
+                      <p>$6347.59</p>
+                    </Link>
+                  </td>
+                </tr>
+                <br />
+              </>
+            ))}
           </tbody>
         </Table>
       </div>
