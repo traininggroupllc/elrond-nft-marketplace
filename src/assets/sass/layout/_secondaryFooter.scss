@@ -73,6 +73,10 @@
         color: $light;
         font-size: 14px;
         font-weight: 600;
+
+        a {
+          color: $light;
+        }
       }
 
       > div:first-child {
@@ -182,6 +186,10 @@
       div > p {
         color: $secondary;
         font-weight: 600;
+
+        a {
+          color: $secondary;
+        }
       }
     }
   }

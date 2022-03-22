@@ -2,6 +2,7 @@ import React from 'react';
 import NFTCard from 'components/common/NFTCard';
 
 import { ReactComponent as ElrondLogoSymbol } from './../../../assets/img/elrond-symbol.svg';
+import { Link } from 'react-router-dom';
 
 const SecondaryFooter = () => {
   const NFTs = [1, 2, 3];
@@ -53,10 +54,14 @@ const SecondaryFooter = () => {
               <p>Blog</p>
             </div>
             <div>
-              <p>About</p>
+              <p>
+                <Link to='/about'>About</Link>
+              </p>
               <p>Press</p>
               <p>Career</p>
-              <p>Community guidelines</p>
+              <p>
+                <Link to='/community_guidelines'>Community guidelines</Link>
+              </p>
               <p>Terms of Service</p>
               <p>Privacy</p>
               <p>Help</p>

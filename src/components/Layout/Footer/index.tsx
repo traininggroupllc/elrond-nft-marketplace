@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { ReactComponent as ElrondLogoSymbol } from './../../../assets/img/elrond-symbol.svg';
 
 const Footer = () => {
@@ -8,11 +9,17 @@ const Footer = () => {
       <div className='footer container-xl'>
         <div className='footer__top'>
           <div className='footer__topItems'>
-            <h3>About</h3>
-            <h3>Blog</h3>
+            <Link to='/about'>
+              <h3>About</h3>
+            </Link>
+            <Link to='/blog'>
+              <h3>Blog</h3>
+            </Link>
             <h3>Press</h3>
             <h3>Careers</h3>
-            <h3>Community Guidelines</h3>
+            <Link to='/community_guidelines'>
+              <h3>Community Guidelines</h3>
+            </Link>
             <h3>Help</h3>
           </div>
           <div className='footer__topSubscribe'>
