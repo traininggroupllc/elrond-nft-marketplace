@@ -52,7 +52,7 @@ const ProfilePopover = ({
     >
       <div
         style={{
-          width: '320px',
+          width: `${isProfile ? '320px' : '280px'}`,
           backgroundColor: 'white',
           padding: '10px',
           borderRadius: '8px',
@@ -315,7 +315,7 @@ const ProfilePopover = ({
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '20px 0',
+                  padding: '15px 10px',
                   cursor: 'pointer'
                 }}
               >
@@ -346,13 +346,13 @@ const ProfilePopover = ({
                 </div>
                 {rightArrow}
               </div>
-              <Link to='/nfts' style={{ color: 'black', outline: 'none' }}>
+              <Link to='/trending' style={{ color: 'black', outline: 'none' }}>
                 <div
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    padding: '20px 0',
+                    padding: '15px 10px',
                     cursor: 'pointer'
                   }}
                 >
@@ -391,7 +391,7 @@ const ProfilePopover = ({
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    padding: '20px 0',
+                    padding: '15px 10px',
                     cursor: 'pointer'
                   }}
                 >

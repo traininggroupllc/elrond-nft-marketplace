@@ -4,6 +4,7 @@ import AboutFoundationTextCenter from '../../../assets/img/textImage/about-found
 import AboutFoundationText from '../../../assets/img/textImage/about-foundation.svg';
 import MakeHistoryCenterText from '../../../assets/img/textImage/making-history-centered.svg';
 import MakeHistoryText from '../../../assets/img/textImage/making-history.svg';
+import Marquee from 'react-fast-marquee';
 
 const AboutFoundation = () => {
   return (
@@ -37,14 +38,13 @@ const AboutFoundation = () => {
         </Col>
       </Row>
       {/* marquee text */}
-      <marquee
+      <Marquee
         className='about__foundation--marquee'
-        width='100%'
         direction='left'
-        height='100%'
+        gradient={false}
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </marquee>
+      </Marquee>
 
       <Row className='mt-4'>
         <Col md={6}>

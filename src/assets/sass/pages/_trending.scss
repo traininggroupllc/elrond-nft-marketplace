@@ -1,0 +1,144 @@
+.trending {
+  padding: 0 25px;
+
+  .trending__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+    h3 {
+      font-size: 34px;
+      text-align: center;
+      color: $dark;
+    }
+
+    .trending__duration {
+      display: flex;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      p {
+        font-size: 18px;
+        font-weight: 600;
+        color: $secondary;
+        margin: 0 8px;
+        padding: 3px 8px;
+        cursor: pointer;
+      }
+
+      .trending__durationSelected {
+        background-color: #d3d3d3ca;
+        color: $dark;
+        border-radius: 10px;
+      }
+    }
+
+    .trending__tab {
+      margin-top: 10px;
+      width: 100%;
+      border-bottom: 1px solid $light-gray;
+
+      .trending__tabTab {
+        display: flex;
+
+        p {
+          margin: 0;
+          margin-right: 20px;
+          padding-bottom: 15px;
+          font-size: 14px;
+          font-weight: 600;
+          cursor: pointer;
+        }
+      }
+
+      .trending__tabDuration {
+        display: none;
+      }
+    }
+
+    table {
+      margin-top: 20px;
+      margin-bottom: 1000px;
+
+      thead {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+
+        th {
+          color: $secondary;
+
+          select {
+            padding: 5px;
+            font-weight: 600;
+            outline: none;
+            border: 1px solid $light-gray;
+            background-color: $light;
+            width: 100px;
+          }
+        }
+
+        .trending__deskTh {
+          display: none;
+        }
+
+        .trending__mobileTh {
+          color: $dark;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) {
+  .trending {
+    .trending__title {
+      .trending__duration {
+        display: none;
+      }
+
+      .trending__tab {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .trending__tabDuration {
+          display: flex;
+
+          p {
+            font-size: 16px;
+            font-weight: 600;
+            color: $secondary;
+            margin: 0 8px;
+            padding: 3px 8px;
+            margin-bottom: 7px;
+            cursor: pointer;
+          }
+
+          .trending__durationSelected {
+            background-color: #d3d3d3ca;
+            color: $dark;
+            border-radius: 10px;
+          }
+        }
+      }
+
+      table {
+        thead {
+          .trending__deskTh {
+            display: table-cell;
+          }
+
+          .trending__deskThDark {
+            color: $dark;
+          }
+
+          .trending__mobileTh {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

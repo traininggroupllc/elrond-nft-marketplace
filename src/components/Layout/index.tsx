@@ -21,7 +21,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       window.location.pathname === '/settings' ||
       window.location.pathname === '/activity' ||
       window.location.pathname === '/notification' ||
-      window.location.pathname === '/feed' ? (
+      window.location.pathname === '/feed' ||
+      window.location.pathname === '/trending' ? (
         <>
           {' '}
           {window.location.pathname === '/user_profile' ||

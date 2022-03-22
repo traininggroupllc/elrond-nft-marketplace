@@ -11,6 +11,7 @@ import NFTs from 'pages/NFTs';
 import Profile from 'pages/Profile';
 import Profiles from 'pages/Profiles';
 import Settings from 'pages/Settings/index';
+import Trending from 'pages/Trending';
 import UserProfile from 'pages/UserProfile';
 import withPageTitle from './components/PageTitle';
 import Dashboard from './pages/Dashboard';
@@ -39,7 +40,8 @@ export const routeNames = {
   about: '/about',
   activity: '/activity',
   notification: '/notification',
-  feed: '/feed'
+  feed: '/feed',
+  trending: '/trending'
 };
 
 const routes: Array<any> = [
@@ -133,6 +135,11 @@ const routes: Array<any> = [
     path: routeNames.feed,
     title: 'Feed',
     component: Feed
+  },
+  {
+    path: routeNames.trending,
+    title: 'Trending',
+    component: Trending
   }
 ];
 

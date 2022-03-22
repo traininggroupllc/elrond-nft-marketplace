@@ -8,7 +8,7 @@ const Feed = () => {
   return (
     <>
       <div className='feed container-xl'>
-        <h4>Follow at least five creator to build your feed</h4>
+        <h3>Follow at least five creator to build your feed</h3>
         <div>
           <div>
             <p>Featured creator</p>
@@ -18,7 +18,7 @@ const Feed = () => {
           </div>
           <Row xs={1} sm={2} md={3} xxl={4} className='g-4'>
             {[1, 2, 3, 4, 5, 6].map((item) => (
-              <NFTCard key={item} />
+              <NFTCard isLive={false} key={item} />
             ))}
           </Row>
         </div>
