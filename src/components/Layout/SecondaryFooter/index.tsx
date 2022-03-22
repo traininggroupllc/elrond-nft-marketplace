@@ -13,7 +13,8 @@ const SecondaryFooter = () => {
           window.location.pathname === '/user_profile' ||
           window.location.pathname === '/single_collection' ||
           window.location.pathname === '/balance' ||
-          window.location.pathname === '/activity') &&
+          window.location.pathname === '/activity' ||
+          window.location.pathname === '/trending') &&
         'secondaryFooter__bid'
       }`}
     >

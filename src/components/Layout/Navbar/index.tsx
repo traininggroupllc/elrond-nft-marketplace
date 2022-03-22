@@ -192,9 +192,15 @@ const Navbar = () => {
         <div className='navBar__menu'>
           <section>
             {walletConnected && <h3>Feed</h3>}
-            <h3>Browse</h3>
-            <h3>Blog</h3>
-            <h3>About</h3>
+            <Link to='/nfts' style={{ color: 'black', outline: 'none' }}>
+              <h3>Browse</h3>
+            </Link>
+            <Link to='/blog' style={{ color: 'black', outline: 'none' }}>
+              <h3>Blog</h3>
+            </Link>
+            <Link to='/about' style={{ color: 'black', outline: 'none' }}>
+              <h3>About</h3>
+            </Link>
             <h3>Career</h3>
             <h3>Help</h3>
             <h3>Twitter</h3>

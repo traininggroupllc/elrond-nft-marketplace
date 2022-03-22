@@ -5,6 +5,7 @@ import Balance from 'pages/Balance';
 import Bid from 'pages/Bid';
 import Blog from 'pages/Blog';
 import Collections from 'pages/Collections';
+import CommunityGuide from 'pages/CommunityGuide';
 import Feed from 'pages/Feed';
 import NFTDetails from 'pages/NFTDetails';
 import NFTs from 'pages/NFTs';
@@ -41,7 +42,8 @@ export const routeNames = {
   activity: '/activity',
   notification: '/notification',
   feed: '/feed',
-  trending: '/trending'
+  trending: '/trending',
+  communityGuidelines: '/community_guidelines'
 };
 
 const routes: Array<any> = [
@@ -140,6 +142,11 @@ const routes: Array<any> = [
     path: routeNames.trending,
     title: 'Trending',
     component: Trending
+  },
+  {
+    path: routeNames.communityGuidelines,
+    title: 'Community Guidelines',
+    component: CommunityGuide
   }
 ];
 

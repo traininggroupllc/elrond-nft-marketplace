@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import UserPopover from 'components/common/UserPopover';
 import Featured from '../../components/Card/FeaturedCard';
@@ -94,13 +95,15 @@ const NFTDetails = () => {
                     <div>
                       <Popup
                         trigger={
-                          <Button variant='light'>
-                            <img
-                              src='https://f8n-production.imgix.net/collections/v0451l09m-000053.JPG?q=50&w=28&h=28&auto=format%2Ccompress&fit=crop&dpr=2'
-                              alt='collection'
-                            />
-                            <p>Marks on my soul</p>
-                          </Button>
+                          <Link to='/single_collection'>
+                            <Button variant='light'>
+                              <img
+                                src='https://f8n-production.imgix.net/collections/v0451l09m-000053.JPG?q=50&w=28&h=28&auto=format%2Ccompress&fit=crop&dpr=2'
+                                alt='collection'
+                              />
+                              <p>Marks on my soul</p>
+                            </Button>
+                          </Link>
                         }
                         position='bottom center'
                         on={['hover', 'focus']}

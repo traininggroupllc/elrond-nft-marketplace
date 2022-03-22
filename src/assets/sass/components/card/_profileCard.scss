@@ -57,13 +57,14 @@
     }
 
     h4 {
+      width: fit-content;
       background: linear-gradient(
         to right,
         green 0%,
-        orange 2%,
-        red 4%,
-        #ff4967 20%,
-        blue 40%,
+        orange 10%,
+        red 40%,
+        #ff4967 60%,
+        blue 80%,
         aqua 100%
       );
       -webkit-background-clip: text;

@@ -1,6 +1,10 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Popup from 'reactjs-popup';
+import UserPopover from 'components/common/UserPopover';
 import NftLargeImg from '../../../assets/img/nft-img/nft-large.gif';
+import Featured from '../../../components/Card/FeaturedCard';
 
 const Hero = () => {
   return (
@@ -13,23 +17,30 @@ const Hero = () => {
         <div className='hero__detailsTop'>
           <div className='hero__detailsCreatedBy'>
             <p className='hero__detailsCreatedByTitle'>Created by</p>
-            <div>
-              <img
-                src='https://f8n-production.imgix.net/creators/profile/hhhb3bkym-000889210032-jpg-6q7yz2.jpg?q=50&w=36&h=36&auto=format%2Ccompress&fit=crop&dpr=2'
-                alt='created_by'
-              />
-              <p>@rozumnyib</p>
-            </div>
+            <UserPopover />
           </div>
           <div className='hero__detailsCollection'>
             <p className='hero__detailsCollectionTitle'>Collection</p>
-            <div>
-              <img
-                src='https://f8n-production.imgix.net/collections/v0451l09m-000053.JPG?q=50&w=28&h=28&auto=format%2Ccompress&fit=crop&dpr=2'
-                alt='collection'
-              />
-              <p>Marks on my soul</p>
-            </div>
+            <Popup
+              trigger={
+                <Link to='/single_collection'>
+                  <Button variant='light'>
+                    <img
+                      src='https://f8n-production.imgix.net/collections/v0451l09m-000053.JPG?q=50&w=28&h=28&auto=format%2Ccompress&fit=crop&dpr=2'
+                      alt='collection'
+                    />
+                    <p>Marks on my soul</p>
+                  </Button>
+                </Link>
+              }
+              position='bottom right'
+              on={['hover', 'focus']}
+              arrow={false}
+            >
+              <div style={{ width: '350px', marginTop: '10px' }}>
+                <Featured isCollection={true} />
+              </div>
+            </Popup>
           </div>
         </div>
 

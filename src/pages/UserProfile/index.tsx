@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import FeaturedCard from 'components/Card/FeaturedCard';
 import NFTCard from 'components/common/NFTCard';
 import UserPopover from 'components/common/UserPopover';
 import UserProfileModal from 'components/common/UserProfileModal';
 import SingleCollectionNav from 'components/Layout/SingleCollectionNav';
-import { Link } from 'react-router-dom';
 
 const UserProfile = () => {
   const [collectionOrCreated, setCollectionOrCreated] = useState('collection');
