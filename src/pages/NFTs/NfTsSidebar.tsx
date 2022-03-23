@@ -38,7 +38,7 @@ const NfTsSidebar = () => {
             <div className='my-3 checkInput'>
               <Form.Check
                 type='checkbox'
-                id='default-checkbox'
+                id='availability-checkbox-1'
                 label='Listed for Auction'
               />
               <p>6,050</p>
@@ -46,7 +46,7 @@ const NfTsSidebar = () => {
             <div className='my-3 checkInput'>
               <Form.Check
                 type='checkbox'
-                id='default-checkbox'
+                id='availability-checkbox-2'
                 label='Buy Now price set'
               />
               <p>6,050</p>
@@ -54,7 +54,7 @@ const NfTsSidebar = () => {
             <div className='my-3 checkInput'>
               <Form.Check
                 type='checkbox'
-                id='default-checkbox'
+                id='availability-checkbox-3'
                 label='Live Auction'
               />
               <p>6,050</p>
@@ -62,7 +62,7 @@ const NfTsSidebar = () => {
             <div className='my-3 checkInput'>
               <Form.Check
                 type='checkbox'
-                id='default-checkbox'
+                id='availability-checkbox-4'
                 label='Active Offer'
               />
               <p>6,050</p>
@@ -76,7 +76,7 @@ const NfTsSidebar = () => {
             <div className='my-3 checkInput'>
               <Form.Check
                 type='checkbox'
-                id='default-checkbox'
+                id='market-checkbox-1'
                 label='Primary'
               />
               <p>6,050</p>
@@ -84,7 +84,7 @@ const NfTsSidebar = () => {
             <div className='my-3 checkInput'>
               <Form.Check
                 type='checkbox'
-                id='default-checkbox'
+                id='market-checkbox-2'
                 label='Secondary'
               />
               <p>6,050</p>
@@ -96,15 +96,15 @@ const NfTsSidebar = () => {
           <Accordion.Header>Type</Accordion.Header>
           <Accordion.Body>
             <div className='my-3 checkInput'>
-              <Form.Check type='checkbox' id='default-checkbox' label='Image' />
+              <Form.Check type='checkbox' id='type-checkbox-1' label='Image' />
               <p>6,050</p>
             </div>
             <div className='my-3 checkInput'>
-              <Form.Check type='checkbox' id='default-checkbox' label='Video' />
+              <Form.Check type='checkbox' id='type-checkbox-2' label='Video' />
               <p>6,050</p>
             </div>
             <div className='my-3 checkInput'>
-              <Form.Check type='checkbox' id='default-checkbox' label='3D' />
+              <Form.Check type='checkbox' id='type-checkbox-3' label='3D' />
               <p>6,050</p>
             </div>
           </Accordion.Body>

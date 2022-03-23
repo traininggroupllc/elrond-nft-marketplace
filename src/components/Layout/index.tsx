@@ -23,7 +23,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       window.location.pathname === '/notification' ||
       window.location.pathname === '/feed' ||
       window.location.pathname === '/trending' ||
-      window.location.pathname === '/community_guidelines' ? (
+      window.location.pathname === '/community_guidelines' ||
+      window.location.pathname === '/about' ||
+      window.location.pathname === '/blog' ? (
         <>
           {' '}
           {window.location.pathname === '/user_profile' ||
