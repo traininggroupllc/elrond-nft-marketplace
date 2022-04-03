@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { routeNames } from 'routes';
 import { ReactComponent as ElrondLogoSymbol } from './../../../assets/img/elrond-symbol.svg';
 
 const Footer = () => {
@@ -34,8 +35,12 @@ const Footer = () => {
         <div className='footer__bottom'>
           <div className='footer__bottomTop'>
             <ElrondLogoSymbol className='footer__logo' />
-            <p>Terms of service</p>
-            <p>Privacy</p>
+            <Link to={routeNames.terms}>
+              <p>Terms of service</p>
+            </Link>
+            <Link to={routeNames.privacy}>
+              <p>Privacy</p>
+            </Link>
           </div>
           <div className='footer__bottomBottom'>
             <svg
