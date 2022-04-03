@@ -7,6 +7,7 @@ import Blog from 'pages/Blog';
 import Collections from 'pages/Collections';
 import CommunityGuide from 'pages/CommunityGuide';
 import Feed from 'pages/Feed';
+import Help from 'pages/Help';
 import NFTDetails from 'pages/NFTDetails';
 import NFTs from 'pages/NFTs';
 import Privacy from 'pages/Privacy';
@@ -47,7 +48,8 @@ export const routeNames = {
   trending: '/trending',
   communityGuidelines: '/community_guidelines',
   terms: '/terms',
-  privacy: '/privacy'
+  privacy: '/privacy',
+  help: '/help'
 };
 
 const routes: Array<any> = [
@@ -161,6 +163,11 @@ const routes: Array<any> = [
     path: routeNames.privacy,
     title: 'Privacy',
     component: Privacy
+  },
+  {
+    path: routeNames.help,
+    title: 'Help',
+    component: Help
   }
 ];
 

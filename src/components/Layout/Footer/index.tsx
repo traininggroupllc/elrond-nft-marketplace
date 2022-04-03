@@ -21,7 +21,9 @@ const Footer = () => {
             <Link to='/community_guidelines'>
               <h3>Community Guidelines</h3>
             </Link>
-            <h3>Help</h3>
+            <Link to={routeNames.help}>
+              <h3>Help</h3>
+            </Link>
           </div>
           <div className='footer__topSubscribe'>
             <h3>Newsletters</h3>

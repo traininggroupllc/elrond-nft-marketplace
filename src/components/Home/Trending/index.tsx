@@ -10,7 +10,7 @@ const data = [NFTImage1, NFTImage2, NFTImage1, NFTImage2, NFTImage1, NFTImage2];
 
 const index = () => {
   return (
-    <div className='trending'>
+    <div className='trending  mt-5 pt-5'>
       <div className='trending__top'>
         <div>
           <Spinner animation='grow' size='sm' />

@@ -129,10 +129,10 @@ const Navbar = () => {
             </NavItem>
             <NavItem className='navBar__navItem'>
               <div className='d-flex align-items-center'>
-                {/* <AiOutlineSearch className='search__icon' /> */}
+                <AiOutlineSearch className='search__icon' />
+                <input type='text' placeholder='Search Foundation...' />
                 {/* working here */}
-                {/* <input type='text' placeholder='Search Foundation...' /> */}
-                <div className='navBar__navItem--search__box'>
+                {/* <div className='navBar__navItem--search__box'>
                   <ReactSearchAutocomplete
                     items={items}
                     onSearch={handleOnSearch}
@@ -143,7 +143,7 @@ const Navbar = () => {
                     formatResult={formatResult}
                     placeholder='Search Foundation...'
                   />
-                </div>
+                </div> */}
               </div>
             </NavItem>
             <NavItem className='navBar__navItem'>
