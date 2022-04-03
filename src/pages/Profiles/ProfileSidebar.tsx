@@ -11,7 +11,7 @@ const ProfileSidebar = () => {
             <div className='my-3 checkInput'>
               <Form.Check
                 type='checkbox'
-                id='default-checkbox'
+                id='type-checkbox-1'
                 label='COLLECTOR'
               />
               <p>6,050</p>
@@ -19,13 +19,13 @@ const ProfileSidebar = () => {
             <div className='my-3 checkInput'>
               <Form.Check
                 type='checkbox'
-                id='default-checkbox'
+                id='type-checkbox-2'
                 label='CREATOR'
               />
               <p>6,050</p>
             </div>
             <div className='my-3 checkInput'>
-              <Form.Check type='checkbox' id='default-checkbox' label='OTHER' />
+              <Form.Check type='checkbox' id='type-checkbox-3' label='OTHER' />
               <p>6,050</p>
             </div>
           </Accordion.Body>
@@ -37,7 +37,7 @@ const ProfileSidebar = () => {
             <div className='my-3 checkInput'>
               <Form.Check
                 type='checkbox'
-                id='default-checkbox'
+                id='verification-checkbox-1'
                 label='TWITTER'
               />
               <p>6,050</p>
@@ -45,7 +45,7 @@ const ProfileSidebar = () => {
             <div className='my-3 checkInput'>
               <Form.Check
                 type='checkbox'
-                id='default-checkbox'
+                id='verification-checkbox-2'
                 label='INSTAGRAM'
               />
               <p>6,050</p>
@@ -53,7 +53,7 @@ const ProfileSidebar = () => {
             <div className='my-3 checkInput'>
               <Form.Check
                 type='checkbox'
-                id='default-checkbox'
+                id='verification-checkbox-3'
                 label='NOT_VERIFIED'
               />
               <p>6,050</p>
