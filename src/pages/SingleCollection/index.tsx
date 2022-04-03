@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Row, Table } from 'react-bootstrap';
 import { RiShareBoxFill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import NFTCard from 'components/common/NFTCard';
 import UserPopover from 'components/common/UserPopover';
 import SingleCollectionNav from 'components/Layout/SingleCollectionNav';
-import { Link } from 'react-router-dom';
 
 const SingleCollection = () => {
   const [selectedTab, setSelectedTab] = useState('nfts');
