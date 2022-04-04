@@ -7,11 +7,14 @@ import Blog from 'pages/Blog';
 import Collections from 'pages/Collections';
 import CommunityGuide from 'pages/CommunityGuide';
 import Feed from 'pages/Feed';
+import Help from 'pages/Help';
 import NFTDetails from 'pages/NFTDetails';
 import NFTs from 'pages/NFTs';
+import Privacy from 'pages/Privacy';
 import Profile from 'pages/Profile';
 import Profiles from 'pages/Profiles';
 import Settings from 'pages/Settings/index';
+import Terms from 'pages/Terms';
 import Trending from 'pages/Trending';
 import UserProfile from 'pages/UserProfile';
 import withPageTitle from './components/PageTitle';
@@ -43,7 +46,10 @@ export const routeNames = {
   notification: '/notification',
   feed: '/feed',
   trending: '/trending',
-  communityGuidelines: '/community_guidelines'
+  communityGuidelines: '/community_guidelines',
+  terms: '/terms',
+  privacy: '/privacy',
+  help: '/help'
 };
 
 const routes: Array<any> = [
@@ -147,6 +153,21 @@ const routes: Array<any> = [
     path: routeNames.communityGuidelines,
     title: 'Community Guidelines',
     component: CommunityGuide
+  },
+  {
+    path: routeNames.terms,
+    title: 'Terms of Service',
+    component: Terms
+  },
+  {
+    path: routeNames.privacy,
+    title: 'Privacy',
+    component: Privacy
+  },
+  {
+    path: routeNames.help,
+    title: 'Help',
+    component: Help
   }
 ];
 

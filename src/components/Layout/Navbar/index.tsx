@@ -3,6 +3,7 @@ import { useGetAccountInfo } from '@elrondnetwork/dapp-core';
 import { Navbar as BsNavbar, NavItem, Nav, Button } from 'react-bootstrap';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import ProfilePopover from 'components/common/ProfilePopover';
 import { routeNames } from 'routes';
 import PowerIcon from '../../../assets/icons/power.png';
@@ -23,6 +24,65 @@ const Navbar = () => {
   };
 
   const isLoggedIn = Boolean(address);
+
+  // autocomplete search box
+  const items = [
+    {
+      id: 0,
+      name: 'Cobol'
+    },
+    {
+      id: 1,
+      name: 'JavaScript'
+    },
+    {
+      id: 2,
+      name: 'Basic'
+    },
+    {
+      id: 3,
+      name: 'PHP'
+    },
+    {
+      id: 4,
+      name: 'Java'
+    }
+  ];
+
+  const handleOnSearch = (string: any, results: any) => {
+    // onSearch will have as the first callback parameter
+    // the string searched and for the second the results.
+    console.log(string, results);
+  };
+
+  const handleOnHover = (result: any) => {
+    // the item hovered
+    console.log(result);
+  };
+
+  const handleOnSelect = (item: any) => {
+    // the item selected
+    console.log(item);
+  };
+
+  const handleOnFocus = () => {
+    console.log('Focused');
+  };
+
+  const formatResult = (item: any) => {
+    return (
+      <>
+        <div className='search__formate--result'>
+          <img
+            className='search__formate--result__img'
+            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmE7kc1-_qDjn3D1_BbI_bc5HS5iolF_1sAA&usqp=CAU'
+            alt='search-image'
+          />
+          <p className='text-secondary'>{item.name}</p>
+        </div>
+      </>
+    );
+  };
 
   return (
     <BsNavbar className='nav flex-column px-4'>
@@ -71,6 +131,19 @@ const Navbar = () => {
               <div className='d-flex align-items-center'>
                 <AiOutlineSearch className='search__icon' />
                 <input type='text' placeholder='Search Foundation...' />
+                {/* working here */}
+                {/* <div className='navBar__navItem--search__box'>
+                  <ReactSearchAutocomplete
+                    items={items}
+                    onSearch={handleOnSearch}
+                    onHover={handleOnHover}
+                    onSelect={handleOnSelect}
+                    onFocus={handleOnFocus}
+                    autoFocus
+                    formatResult={formatResult}
+                    placeholder='Search Foundation...'
+                  />
+                </div> */}
               </div>
             </NavItem>
             <NavItem className='navBar__navItem'>
